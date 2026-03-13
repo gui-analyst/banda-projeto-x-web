@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Music, Zap, Users, DollarSign, Phone, Mail, Instagram, Heart, Sparkles, ChevronDown } from 'lucide-react';
+import { Music, Zap, Users, DollarSign, Phone, Mail, Instagram, Heart, Sparkles, ChevronDown, Play } from 'lucide-react';
+import MobileMenu from '@/components/MobileMenu';
+import { CyberpunkIcon } from '@/components/CyberpunkIcons';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('sobre');
   const [scrollY, setScrollY] = useState(0);
+  const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -14,6 +17,7 @@ export default function Home() {
   const tabs = [
     { id: 'sobre', label: 'Sobre', icon: Music },
     { id: 'diferenciais', label: 'Diferenciais', icon: Sparkles },
+    { id: 'videos', label: 'Vídeos', icon: Play },
     { id: 'orcamento', label: 'Orçamento', icon: DollarSign },
     { id: 'contato', label: 'Contato', icon: Phone },
   ];
@@ -29,41 +33,71 @@ export default function Home() {
     {
       title: 'Violada X',
       description: 'Um momento para reviver as músicas sertanejas de raiz que fizeram sucesso, com um violeiro de alta performance tocando junto com a banda.',
-      icon: '🎸',
+      icon: 'VioladaX',
     },
     {
       title: 'Dançarino X',
       description: 'Dançarino com máscara de LED neon que interage com o público, criando momentos memoráveis e cheios de energia.',
-      icon: '💃',
+      icon: 'DancadorX',
     },
     {
       title: 'Bazuka de CO2',
       description: 'Efeitos visuais impressionantes com CO2 que criam uma atmosfera cinematográfica durante os momentos especiais.',
-      icon: '💨',
+      icon: 'CO2',
     },
     {
       title: 'Shots de Bebida',
       description: 'Interação com noivos e convidados, tomando shots de uma maneira empolgante e divertida.',
-      icon: '🥃',
+      icon: 'Shot',
     },
     {
       title: 'Óculos X',
       description: 'Acessórios especiais que tornam cada momento ainda mais marcante e divertido para os convidados.',
-      icon: '😎',
+      icon: 'OculosX',
+    },
+  ];
+
+  const videos = [
+    {
+      id: 1,
+      title: 'Casamento - Momento Épico',
+      thumbnail: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    },
+    {
+      id: 2,
+      title: 'Formatura - Energia Total',
+      thumbnail: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=300&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    },
+    {
+      id: 3,
+      title: '15 Anos - Surpresa Especial',
+      thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    },
+    {
+      id: 4,
+      title: 'Confraternização - Festa Animada',
+      thumbnail: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop',
+      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     },
   ];
 
   return (
     <div className="hexagon-bg min-h-screen">
+      {/* Mobile Menu */}
+      <MobileMenu tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+
       {/* Navigation Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-[#FF2E4A]/20">
+      <header className="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-b border-[#FF2E4A]/20">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="text-3xl font-bold display-font text-white">
               PROJETO<span className="text-[#FF2E4A]">X</span>
             </div>
           </div>
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden md:flex gap-6">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -86,7 +120,7 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/hero-banda-projeto-x-FuVJuRMvzHN8McYgbzfnUe.webp)',
+            backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/Notes_260313_004739_dfe_4d696c27.png)',
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         />
@@ -108,7 +142,7 @@ export default function Home() {
             Melhor Banda 2023/2024 - Casamentos, Formaturas, 15 Anos e Confraternizações
           </p>
           <button
-            onClick={() => setActiveTab('contato')}
+            onClick={() => setActiveTab('orcamento')}
             className="btn-neon fade-in-up"
             style={{ animationDelay: '0.4s' }}
           >
@@ -125,50 +159,9 @@ export default function Home() {
       {/* Tab Content Section */}
       <section className="relative py-20 px-4">
         <div className="container mx-auto">
-          {/* Tab Buttons - Mobile */}
-          <div className="md:hidden flex flex-wrap gap-2 mb-12 justify-center">
-            {tabs.map((tab) => {
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded border-2 transition-all duration-300 ${
-                    activeTab === tab.id
-                      ? 'border-[#FF2E4A] bg-[#FF2E4A] text-white'
-                      : 'border-[#FF2E4A]/50 text-white hover:border-[#FF2E4A]'
-                  }`}
-                >
-                  <Icon size={18} />
-                  <span className="text-sm font-bold">{tab.label}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Statistics Section */}
-          {activeTab === 'sobre' && (
-            <div className="mb-16">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {stats.map((stat, idx) => (
-                  <div
-                    key={idx}
-                    className="p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] transition-all duration-300 text-center group"
-                    style={{ animationDelay: `${idx * 0.1}s` }}
-                  >
-                    <div className="text-3xl md:text-4xl font-bold text-[#FF2E4A] mb-2 display-font group-hover:scale-110 transition-transform duration-300">
-                      {stat.number}
-                    </div>
-                    <p className="text-sm md:text-base text-gray-300">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* SOBRE Tab */}
           {activeTab === 'sobre' && (
-            <div className="fade-in-up space-y-8">
+            <div className="fade-in-up space-y-12">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
                   SOBRE NÓS
@@ -176,22 +169,38 @@ export default function Home() {
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
               </div>
 
+              {/* Statistics Section */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-12">
+                {stats.map((stat, idx) => (
+                  <div
+                    key={idx}
+                    className="p-3 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] transition-all duration-300 text-center group min-h-[140px] flex flex-col justify-center"
+                    style={{ animationDelay: `${idx * 0.1}s` }}
+                  >
+                    <div className="text-xl md:text-3xl font-bold text-[#FF2E4A] mb-1 md:mb-2 display-font group-hover:scale-110 transition-transform duration-300 break-words">
+                      {stat.number}
+                    </div>
+                    <p className="text-xs md:text-sm text-gray-300 leading-tight">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6 order-2 md:order-1">
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                     Somos a <span className="text-[#FF2E4A] font-bold">Banda Projeto X</span>, uma das maiores referências do Brasil em casamentos, formaturas, confraternizações e festas de 15 anos.
                   </p>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                     Vencedores do prêmio de <span className="text-[#FF2E4A] font-bold">Melhor Banda 2023/2024</span>, somos reconhecidos por entregar um espetáculo completo, com energia do começo ao fim, sem pausas.
                   </p>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                     Muito mais que um show, um verdadeiro "espetáculo" - uma banda que eternaliza todos os momentos e realiza o sonho junto com vocês, misturando todos os estilos musicais e levando alegria por onde passa.
                   </p>
-                  <p className="text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
                     Um repertório eclético e super animado com números e brincadeiras que não deixam ninguém parado.
                   </p>
                 </div>
-                <div className="relative h-96 rounded-lg overflow-hidden border-2 border-[#FF2E4A] neon-border order-1 md:order-2 group hover:shadow-2xl transition-all duration-300" style={{ boxShadow: '0 0 30px rgba(255, 46, 74, 0.5)' }}>
+                <div className="relative h-80 md:h-96 rounded-lg overflow-hidden border-2 border-[#FF2E4A] neon-border order-1 md:order-2 group hover:shadow-2xl transition-all duration-300" style={{ boxShadow: '0 0 30px rgba(255, 46, 74, 0.5)' }}>
                   <img
                     src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/moments-collage-projeto-x-7Le45Ri6Q6GiKjBZszMZZm.webp"
                     alt="Momentos Projeto X"
@@ -212,36 +221,107 @@ export default function Home() {
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {diferenciais.map((diferencial, idx) => (
                   <div
                     key={idx}
-                    className="p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group fade-in-up"
+                    className="p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group fade-in-up overflow-hidden min-h-[280px] flex flex-col"
                     style={{ animationDelay: `${idx * 0.1}s` }}
                   >
-                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 scale-pulse">
-                      {diferencial.icon}
+                    <div className="w-14 h-14 md:w-16 md:h-16 mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                      <CyberpunkIcon name={diferencial.icon as any} className="w-14 h-14 md:w-16 md:h-16" />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#FF2E4A] mb-3 display-font">
+                    <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] mb-2 md:mb-3 display-font">
                       {diferencial.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-xs md:text-sm text-gray-300 leading-relaxed flex-grow">
                       {diferencial.description}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-12 p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border hover:shadow-2xl transition-all duration-300" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.5)' }}>
+              <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border hover:shadow-2xl transition-all duration-300" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.5)' }}>
                 <h3 className="text-2xl font-bold text-white mb-4 display-font">
                   ⏱️ Duração do Show
                 </h3>
-                <p className="text-xl text-[#FF2E4A] font-bold">
+                <p className="text-lg md:text-xl text-[#FF2E4A] font-bold">
                   2 horas a 2 horas e 30 minutos
                 </p>
-                <p className="text-gray-300 mt-2">
+                <p className="text-gray-300 mt-2 text-sm md:text-base">
                   Energia do início ao fim, sem pausas. Sempre com muita interação com o público e momentos marcantes.
                 </p>
+              </div>
+            </div>
+          )}
+
+          {/* VÍDEOS Tab */}
+          {activeTab === 'videos' && (
+            <div className="fade-in-up space-y-12">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                  MELHORES MOMENTOS
+                </h2>
+                <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+              </div>
+
+              {/* Video Modal */}
+              {selectedVideo !== null && (
+                <div
+                  className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+                  onClick={() => setSelectedVideo(null)}
+                >
+                  <div
+                    className="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden border-2 border-[#FF2E4A]"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      onClick={() => setSelectedVideo(null)}
+                      className="absolute top-4 right-4 z-10 p-2 bg-[#FF2E4A] text-white rounded hover:bg-[#FF2E4A]/80 transition-all"
+                    >
+                      ✕
+                    </button>
+                    <div className="aspect-video">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={videos[selectedVideo].embedUrl}
+                        title={videos[selectedVideo].title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Video Grid */}
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                {videos.map((video, idx) => (
+                  <div
+                    key={video.id}
+                    className="group cursor-pointer fade-in-up"
+                    style={{ animationDelay: `${idx * 0.1}s` }}
+                    onClick={() => setSelectedVideo(idx)}
+                  >
+                    <div className="relative h-48 md:h-64 rounded-lg overflow-hidden border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300">
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                        <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="text-base md:text-lg font-bold text-white mt-3 md:mt-4 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
+                      {video.title}
+                    </h3>
+                  </div>
+                ))}
               </div>
             </div>
           )}
@@ -256,39 +336,39 @@ export default function Home() {
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-6">
                 {/* Valor */}
-                <div className="p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border">
+                <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border overflow-hidden">
                   <h3 className="text-2xl font-bold text-white mb-4 display-font flex items-center gap-2">
-                    <DollarSign className="text-[#FF2E4A]" size={32} />
+                    <CyberpunkIcon name="Energia" className="w-8 h-8" />
                     Valor do Show
                   </h3>
-                  <div className="text-5xl font-bold text-[#FF2E4A] mb-4">
+                  <div className="text-4xl md:text-5xl font-bold text-[#FF2E4A] mb-4">
                     R$ 8.000,00
                   </div>
-                  <p className="text-gray-300">
+                  <p className="text-gray-300 text-sm md:text-base">
                     Valor para show de 2 a 2h30 de duração
                   </p>
                 </div>
 
                 {/* Formas de Pagamento */}
-                <div className="p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover">
+                <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover overflow-hidden">
                   <h3 className="text-2xl font-bold text-white mb-4 display-font">
                     Formas de Pagamento
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <span className="text-[#FF2E4A] font-bold">•</span>
+                      <span className="text-[#FF2E4A] font-bold text-lg">•</span>
                       <div>
-                        <p className="font-bold text-white">Sinal (Garantia)</p>
-                        <p className="text-gray-300">R$ 1.500,00 no ato da assinatura do contrato</p>
+                        <p className="font-bold text-white text-sm md:text-base">Sinal (Garantia)</p>
+                        <p className="text-gray-300 text-xs md:text-sm">R$ 1.500,00 no ato da assinatura do contrato</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="text-[#FF2E4A] font-bold">•</span>
+                      <span className="text-[#FF2E4A] font-bold text-lg">•</span>
                       <div>
-                        <p className="font-bold text-white">Restante</p>
-                        <p className="text-gray-300">7 dias antes do evento</p>
+                        <p className="font-bold text-white text-sm md:text-base">Restante</p>
+                        <p className="text-gray-300 text-xs md:text-sm">7 dias antes do evento</p>
                       </div>
                     </div>
                   </div>
@@ -296,7 +376,7 @@ export default function Home() {
               </div>
 
               {/* Inclusos */}
-              <div className="p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover">
+              <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover overflow-hidden">
                 <h3 className="text-2xl font-bold text-white mb-6 display-font">
                   ✓ Inclusos no Show
                 </h3>
@@ -312,18 +392,18 @@ export default function Home() {
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3">
                       <span className="text-[#FF2E4A] text-xl">✓</span>
-                      <span className="text-white">{item}</span>
+                      <span className="text-white text-sm md:text-base">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Importante */}
-              <div className="p-8 rounded-lg border-2 border-yellow-600/50 bg-yellow-900/10">
+              <div className="p-6 md:p-8 rounded-lg border-2 border-yellow-600/50 bg-yellow-900/10 overflow-hidden">
                 <h3 className="text-xl font-bold text-yellow-400 mb-3 display-font">
                   ⚠️ Importante
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-gray-300 text-sm md:text-base">
                   A contratação de Som, Estrutura, Palco, Iluminação e Backline é por conta do contratante, conforme o nosso Rider Técnico, que será enviado junto com o fechamento.
                 </p>
               </div>
@@ -340,33 +420,33 @@ export default function Home() {
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-4 md:gap-6">
                 {/* WhatsApp */}
                 <a
                   href="https://wa.me/5516994204686"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group text-center"
+                  className="p-4 md:p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group text-center overflow-hidden min-h-[240px] flex flex-col justify-center"
                 >
-                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 scale-pulse">
+                  <div className="text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 scale-pulse">
                     💬
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2 display-font">WhatsApp</h3>
-                  <p className="text-[#FF2E4A] font-bold text-lg">(16) 99420-4686</p>
-                  <p className="text-gray-400 text-sm mt-2">Clique para conversar</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 display-font">WhatsApp</h3>
+                  <p className="text-[#FF2E4A] font-bold text-base md:text-lg break-all">(16) 99420-4686</p>
+                  <p className="text-gray-400 text-xs md:text-sm mt-2">Clique para conversar</p>
                 </a>
 
                 {/* Email */}
                 <a
                   href="mailto:contatoprojetoxbanda@gmail.com"
-                  className="p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group text-center"
+                  className="p-4 md:p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group text-center overflow-hidden min-h-[240px] flex flex-col justify-center"
                 >
-                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 scale-pulse">
+                  <div className="text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 scale-pulse">
                     📧
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2 display-font">Email</h3>
-                  <p className="text-[#FF2E4A] font-bold text-sm break-all">contatoprojetoxbanda@gmail.com</p>
-                  <p className="text-gray-400 text-sm mt-2">Clique para enviar email</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 display-font">Email</h3>
+                  <p className="text-[#FF2E4A] font-bold text-xs md:text-sm break-all">contatoprojetoxbanda@gmail.com</p>
+                  <p className="text-gray-400 text-xs md:text-sm mt-2">Clique para enviar email</p>
                 </a>
 
                 {/* Instagram */}
@@ -374,19 +454,19 @@ export default function Home() {
                   href="https://instagram.com/projetoxbanda"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group text-center"
+                  className="p-4 md:p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group text-center overflow-hidden min-h-[240px] flex flex-col justify-center"
                 >
-                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 scale-pulse">
+                  <div className="text-4xl md:text-5xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 scale-pulse">
                     📱
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2 display-font">Instagram</h3>
-                  <p className="text-[#FF2E4A] font-bold">@projetoxbanda</p>
-                  <p className="text-gray-400 text-sm mt-2">Siga nossas redes</p>
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 display-font">Instagram</h3>
+                  <p className="text-[#FF2E4A] font-bold text-base md:text-lg">@projetoxbanda</p>
+                  <p className="text-gray-400 text-xs md:text-sm mt-2">Siga nossas redes</p>
                 </a>
               </div>
 
               {/* Contact Form */}
-              <div className="p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border">
+              <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border overflow-hidden">
                 <h3 className="text-2xl font-bold text-white mb-6 display-font">
                   Envie uma Mensagem
                 </h3>
@@ -394,22 +474,22 @@ export default function Home() {
                   <input
                     type="text"
                     placeholder="Seu Nome"
-                    className="w-full px-4 py-3 rounded bg-black/60 border border-[#FF2E4A]/30 text-white placeholder-gray-500 focus:border-[#FF2E4A] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded bg-black/60 border border-[#FF2E4A]/30 text-white placeholder-gray-500 focus:border-[#FF2E4A] focus:outline-none transition-colors text-sm md:text-base"
                   />
                   <input
                     type="email"
                     placeholder="Seu Email"
-                    className="w-full px-4 py-3 rounded bg-black/60 border border-[#FF2E4A]/30 text-white placeholder-gray-500 focus:border-[#FF2E4A] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded bg-black/60 border border-[#FF2E4A]/30 text-white placeholder-gray-500 focus:border-[#FF2E4A] focus:outline-none transition-colors text-sm md:text-base"
                   />
                   <input
                     type="tel"
                     placeholder="Seu Telefone"
-                    className="w-full px-4 py-3 rounded bg-black/60 border border-[#FF2E4A]/30 text-white placeholder-gray-500 focus:border-[#FF2E4A] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded bg-black/60 border border-[#FF2E4A]/30 text-white placeholder-gray-500 focus:border-[#FF2E4A] focus:outline-none transition-colors text-sm md:text-base"
                   />
                   <textarea
                     placeholder="Sua Mensagem"
                     rows={5}
-                    className="w-full px-4 py-3 rounded bg-black/60 border border-[#FF2E4A]/30 text-white placeholder-gray-500 focus:border-[#FF2E4A] focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded bg-black/60 border border-[#FF2E4A]/30 text-white placeholder-gray-500 focus:border-[#FF2E4A] focus:outline-none transition-colors resize-none text-sm md:text-base"
                   />
                   <button
                     type="submit"
@@ -431,7 +511,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-[#FF2E4A]/20 bg-black/80 py-8 px-4">
         <div className="container mx-auto text-center">
-          <p className="text-gray-400 mb-4">
+          <p className="text-gray-400 mb-4 text-sm md:text-base">
             © 2025 Banda Projeto X. Todos os direitos reservados.
           </p>
           <div className="flex justify-center gap-6 mb-4">
@@ -445,8 +525,8 @@ export default function Home() {
               <Mail size={24} />
             </a>
           </div>
-          <p className="text-sm text-gray-500">
-            Feito com <Heart size={14} className="inline text-[#FF2E4A]" /> para a melhor banda do Brasil
+          <p className="text-xs md:text-sm text-gray-500">
+            Feito com <Heart size={14} className="inline text-[#FF2E4A]" /> por Guilherme Correa para a melhor banda do Brasil
           </p>
         </div>
       </footer>
