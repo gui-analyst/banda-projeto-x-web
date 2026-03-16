@@ -60,29 +60,38 @@ export default function Home() {
   const videos = [
     {
       id: 1,
-      title: 'Casamento - Momento Épico',
-      thumbnail: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=300&fit=crop',
-      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      title: 'Show Projeto X - Momento Épico',
+      thumbnail: 'https://img.youtube.com/vi/v5TYzZS9Yyc/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/v5TYzZS9Yyc',
     },
     {
       id: 2,
-      title: 'Formatura - Energia Total',
-      thumbnail: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=300&fit=crop',
-      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      title: 'Projeto X - Energia Total',
+      thumbnail: 'https://img.youtube.com/vi/eIt_3LZOOwU/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/eIt_3LZOOwU',
     },
     {
       id: 3,
-      title: '15 Anos - Surpresa Especial',
-      thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop',
-      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      title: 'Banda Projeto X - Surpresa Especial',
+      thumbnail: 'https://img.youtube.com/vi/wBx8TFeN7gU/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/wBx8TFeN7gU',
     },
     {
       id: 4,
-      title: 'Confraternização - Festa Animada',
-      thumbnail: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&h=300&fit=crop',
-      embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      title: 'Projeto X - Festa Animada',
+      thumbnail: 'https://img.youtube.com/vi/kiis8llcQVY/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/kiis8llcQVY',
+    },
+    {
+      id: 5,
+      title: 'Banda Projeto X - Show Completo',
+      thumbnail: 'https://img.youtube.com/vi/YQL5VoCSWIc/maxresdefault.jpg',
+      embedUrl: 'https://www.youtube.com/embed/YQL5VoCSWIc',
     },
   ];
+
+  // Show hero banner only on 'sobre' tab
+  const showHeroBanner = activeTab === 'sobre';
 
   return (
     <div className="hexagon-bg min-h-screen">
@@ -115,49 +124,51 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative w-full h-screen pt-20 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/Notes_260313_004739_dfe_4d696c27.png)',
-            transform: `translateY(${scrollY * 0.5}px)`,
-          }}
-        />
-        <div className="absolute inset-0 bg-black/50" />
+      {/* Hero Section - Only shown on 'sobre' tab */}
+      {showHeroBanner && (
+        <section className="relative w-full h-screen pt-20 overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/Notes_260313_004739_dfe_4d696c27.png)',
+              transform: `translateY(${scrollY * 0.5}px)`,
+            }}
+          />
+          <div className="absolute inset-0 bg-black/50" />
 
-        {/* Animated Background Elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-[#FF2E4A]/30 rounded-full animate-pulse scale-pulse" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 border-2 border-[#FF2E4A]/20 rounded-full animate-pulse scale-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 right-20 w-24 h-24 border-2 border-[#FF2E4A]/20 rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
+          {/* Animated Background Elements */}
+          <div className="absolute top-20 left-10 w-32 h-32 border-2 border-[#FF2E4A]/30 rounded-full animate-pulse scale-pulse" />
+          <div className="absolute bottom-20 right-10 w-48 h-48 border-2 border-[#FF2E4A]/20 rounded-full animate-pulse scale-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 right-20 w-24 h-24 border-2 border-[#FF2E4A]/20 rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-5xl md:text-7xl font-bold display-font text-white mb-4 slide-in-left glow-text">
-            PROJETO<span className="text-[#FF2E4A]">X</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl fade-in-up">
-            O Espetáculo da Sua Vida
-          </p>
-          <p className="text-sm md:text-lg text-gray-300 max-w-2xl mb-12 fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Melhor Banda 2023/2024 - Casamentos, Formaturas, 15 Anos e Confraternizações
-          </p>
-          <button
-            onClick={() => setActiveTab('orcamento')}
-            className="btn-neon fade-in-up"
-            style={{ animationDelay: '0.4s' }}
-          >
-            SOLICITAR ORÇAMENTO
-          </button>
-        </div>
+          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+            <h1 className="text-5xl md:text-7xl font-bold display-font text-white mb-4 slide-in-left glow-text">
+              PROJETO<span className="text-[#FF2E4A]">X</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl fade-in-up">
+              O Espetáculo da Sua Vida
+            </p>
+            <p className="text-sm md:text-lg text-gray-300 max-w-2xl mb-12 fade-in-up" style={{ animationDelay: '0.2s' }}>
+              Melhor Banda 2023/2024 - Casamentos, Formaturas, 15 Anos e Confraternizações
+            </p>
+            <button
+              onClick={() => setActiveTab('orcamento')}
+              className="btn-neon fade-in-up"
+              style={{ animationDelay: '0.4s' }}
+            >
+              SOLICITAR ORÇAMENTO
+            </button>
+          </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-[#FF2E4A] text-glow" />
-        </div>
-      </section>
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <ChevronDown className="w-8 h-8 text-[#FF2E4A] text-glow" />
+          </div>
+        </section>
+      )}
 
       {/* Tab Content Section */}
-      <section className="relative py-20 px-4">
+      <section className={`relative px-4 ${showHeroBanner ? 'py-20' : 'pt-32 pb-20'}`}>
         <div className="container mx-auto">
           {/* SOBRE Tab */}
           {activeTab === 'sobre' && (
@@ -297,7 +308,7 @@ export default function Home() {
               )}
 
               {/* Video Grid */}
-              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {videos.map((video, idx) => (
                   <div
                     key={video.id}
@@ -305,11 +316,14 @@ export default function Home() {
                     style={{ animationDelay: `${idx * 0.1}s` }}
                     onClick={() => setSelectedVideo(idx)}
                   >
-                    <div className="relative h-48 md:h-64 rounded-lg overflow-hidden border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300">
+                    <div className="relative h-40 md:h-56 rounded-lg overflow-hidden border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300">
                       <img
                         src={video.thumbnail}
                         alt={video.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=Projeto+X';
+                        }}
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                         <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -317,7 +331,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <h3 className="text-base md:text-lg font-bold text-white mt-3 md:mt-4 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
+                    <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
                       {video.title}
                     </h3>
                   </div>
