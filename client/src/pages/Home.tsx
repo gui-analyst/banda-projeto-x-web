@@ -40,7 +40,7 @@ export default function Home() {
       title: 'Dançarino X',
       description: 'Dançarino com máscara de LED neon que interage com o público, criando momentos memoráveis e cheios de energia.',
       icon: 'DancadorX',
-      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.49 (2)_d2776be0.jpeg',
+      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/pasted_file_ltDcta_WhatsAppImage2026-03-16at19.51.49_b816d57a.webp',
     },
     {
       title: 'Bazuka de CO2',
@@ -58,7 +58,7 @@ export default function Home() {
       title: 'Óculos X',
       description: 'Acessórios especiais que tornam cada momento ainda mais marcante e divertido para os convidados.',
       icon: 'OculosX',
-      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.48 (4)_86c3ed6b.jpeg',
+      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/pasted_file_ykPx4Z_WhatsAppImage2026-03-16at19.51.49(3)_88ff815e.webp',
     },
   ];
 
