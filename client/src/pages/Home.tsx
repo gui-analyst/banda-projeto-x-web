@@ -107,9 +107,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-b border-[#FF2E4A]/20">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="text-3xl font-bold display-font text-white">
-              PROJETO<span className="text-[#FF2E4A]">X</span>
-            </div>
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="h-12 md:h-14 w-auto" />
           </div>
           <nav className="hidden md:flex gap-6">
             {tabs.map((tab) => (
@@ -147,7 +145,8 @@ export default function Home() {
           <div className="absolute top-1/2 right-20 w-24 h-24 border-2 border-[#FF2E4A]/20 rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
 
           <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-            <h1 className="text-5xl md:text-7xl font-bold display-font text-white mb-4 slide-in-left glow-text">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="h-32 md:h-48 w-auto mb-8 slide-in-left" />
+            <h1 className="text-3xl md:text-5xl font-bold display-font text-white mb-4 slide-in-left glow-text hidden">
               PROJETO<span className="text-[#FF2E4A]">X</span>
             </h1>
             <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl fade-in-up">
