@@ -34,26 +34,31 @@ export default function Home() {
       title: 'Violada X',
       description: 'Um momento para reviver as músicas sertanejas de raiz que fizeram sucesso, com um violeiro de alta performance tocando junto com a banda.',
       icon: 'VioladaX',
+      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.48_cb459df8.jpeg',
     },
     {
       title: 'Dançarino X',
       description: 'Dançarino com máscara de LED neon que interage com o público, criando momentos memoráveis e cheios de energia.',
       icon: 'DancadorX',
+      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.49 (2)_d2776be0.jpeg',
     },
     {
       title: 'Bazuka de CO2',
       description: 'Efeitos visuais impressionantes com CO2 que criam uma atmosfera cinematográfica durante os momentos especiais.',
       icon: 'CO2',
+      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.48 (2)_152d62ae.jpeg',
     },
     {
       title: 'Shots de Bebida',
       description: 'Interação com noivos e convidados, tomando shots de uma maneira empolgante e divertida.',
       icon: 'Shot',
+      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg',
     },
     {
       title: 'Óculos X',
       description: 'Acessórios especiais que tornam cada momento ainda mais marcante e divertido para os convidados.',
       icon: 'OculosX',
+      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.48 (4)_86c3ed6b.jpeg',
     },
   ];
 
@@ -232,27 +237,42 @@ export default function Home() {
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 {diferenciais.map((diferencial, idx) => (
                   <div
                     key={idx}
-                    className="p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover group fade-in-up overflow-hidden min-h-[280px] flex flex-col"
+                    className="group fade-in-up overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover"
                     style={{ animationDelay: `${idx * 0.1}s` }}
                   >
-                    <div className="w-14 h-14 md:w-16 md:h-16 mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                      <CyberpunkIcon name={diferencial.icon as any} className="w-14 h-14 md:w-16 md:h-16" />
+                    {/* Image Section */}
+                    <div className="relative h-56 md:h-64 overflow-hidden bg-black/60">
+                      <img
+                        src={diferencial.image}
+                        alt={diferencial.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                    <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] mb-2 md:mb-3 display-font">
-                      {diferencial.title}
-                    </h3>
-                    <p className="text-xs md:text-sm text-gray-300 leading-relaxed flex-grow">
-                      {diferencial.description}
-                    </p>
+
+                    {/* Content Section */}
+                    <div className="p-4 md:p-6 bg-black/40 group-hover:bg-black/60 transition-all duration-300">
+                      <div className="flex items-start gap-3 mb-3">
+                        <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                          <CyberpunkIcon name={diferencial.icon as any} className="w-10 h-10 md:w-12 md:h-12" />
+                        </div>
+                        <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font flex-grow">
+                          {diferencial.title}
+                        </h3>
+                      </div>
+                      <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
+                        {diferencial.description}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
 
-              <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border hover:shadow-2xl transition-all duration-300" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.5)' }}>
+              <div className="mt-12 p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border hover:shadow-2xl transition-all duration-300" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.5)' }}>
                 <h3 className="text-2xl font-bold text-white mb-4 display-font">
                   ⏱️ Duração do Show
                 </h3>
