@@ -534,7 +534,7 @@ export default function Home() {
           {/* Back face - Banda Projeto X Logo */}
           <div className="flip-face back">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_d2c4f3e8.webp"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp"
               alt="Projeto X"
             />
           </div>
