@@ -543,10 +543,8 @@ export default function Home() {
             <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#FF2E4A] hover:text-white transition-colors hover:scale-110 transform duration-300">
               <Instagram size={24} />
             </a>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-[#FF2E4A] hover:text-white transition-colors hover:scale-110 transform duration-300">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2.5 22l6.26-1.35C10.47 21.75 11.22 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-.71 0-1.41-.15-2.08-.4l-.15-.07-1.55.33.36-1.3-.08-.13c-.6-1.02-.94-2.2-.94-3.43 0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm3.5-9c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm-7 0c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z" />
-              </svg>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/whatsapp-logo-custom_d2526154.png" alt="WhatsApp" className="w-6 h-6" />
             </a>
             <a href={emailUrl} className="text-[#FF2E4A] hover:text-white transition-colors hover:scale-110 transform duration-300">
               <Mail size={24} />
