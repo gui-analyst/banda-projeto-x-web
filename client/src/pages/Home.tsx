@@ -524,6 +524,19 @@ export default function Home() {
         title="Conversar no WhatsApp"
       >
         <div className="flip-container">
+          {/* Sparkle particles */}
+          <div className="sparkle"></div>
+          <div className="sparkle"></div>
+          <div className="sparkle"></div>
+          <div className="sparkle"></div>
+          
+          {/* Orbiting sparkles */}
+          <div className="orbit-sparkle"></div>
+          <div className="orbit-sparkle"></div>
+          
+          {/* Light flare effect */}
+          <div className="flip-flare"></div>
+          
           {/* Front face - WhatsApp Logo */}
           <div className="flip-face front">
             <img

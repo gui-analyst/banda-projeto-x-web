@@ -639,3 +639,180 @@
       height: 3rem;
     }
   }
+
+  /* Optical Flares and Magic Light Effects */
+  @keyframes sparkle-burst {
+    0% {
+      opacity: 0;
+      transform: scale(0) translate(0, 0);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1) translate(var(--tx), var(--ty));
+    }
+  }
+  
+  @keyframes light-flare {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2);
+    }
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px rgba(255, 46, 74, 0.3));
+    }
+    50% {
+      filter: drop-shadow(0 0 20px rgba(255, 46, 74, 0.8)) drop-shadow(0 0 40px rgba(255, 46, 74, 0.4));
+    }
+  }
+  
+  @keyframes light-beam {
+    0% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    25% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0;
+      transform: scaleX(1);
+    }
+  }
+  
+  @keyframes orbit-sparkle {
+    0% {
+      transform: rotate(0deg) translateX(40px) rotate(-0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(360deg) translateX(40px) rotate(-360deg);
+      opacity: 0;
+    }
+  }
+  
+  .flip-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    animation: flip-3d 6s infinite ease-in-out;
+  }
+  
+  .flip-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: glow-pulse 6s infinite ease-in-out;
+    pointer-events: none;
+  }
+  
+  /* Light beam effect during flip */
+  .flip-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 46, 74, 0.8), transparent);
+    top: 50%;
+    left: 0;
+    animation: light-beam 6s infinite ease-in-out;
+    pointer-events: none;
+  }
+  
+  /* Sparkle particles */
+  .sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, rgba(255, 46, 74, 1), rgba(255, 46, 74, 0));
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
+  .sparkle:nth-child(1) {
+    --tx: 30px;
+    --ty: -20px;
+    animation: sparkle-burst 6s 1.5s infinite ease-out;
+  }
+  
+  .sparkle:nth-child(2) {
+    --tx: -25px;
+    --ty: -15px;
+    animation: sparkle-burst 6s 2s infinite ease-out;
+  }
+  
+  .sparkle:nth-child(3) {
+    --tx: 20px;
+    --ty: 25px;
+    animation: sparkle-burst 6s 2.5s infinite ease-out;
+  }
+  
+  .sparkle:nth-child(4) {
+    --tx: -30px;
+    --ty: 20px;
+    animation: sparkle-burst 6s 3s infinite ease-out;
+  }
+  
+  /* Flare effect at flip midpoint */
+  .flip-flare {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
+  .flip-flare::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 46, 74, 0.6), transparent);
+    animation: light-flare 6s 2.5s infinite ease-out;
+  }
+  
+  /* Orbiting sparkles */
+  .orbit-sparkle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 46, 74, 0.8);
+    border-radius: 50%;
+    animation: orbit-sparkle 6s infinite linear;
+  }
+  
+  .orbit-sparkle:nth-child(5) {
+    animation-delay: 0s;
+  }
+  
+  .orbit-sparkle:nth-child(6) {
+    animation-delay: 2s;
+  }
