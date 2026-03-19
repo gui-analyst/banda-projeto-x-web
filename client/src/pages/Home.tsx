@@ -210,7 +210,7 @@ export default function Home() {
                     <div className="p-6">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="text-2xl">
-                          <CyberpunkIcon name={item.icon} />
+                          <CyberpunkIcon name={item.icon as keyof typeof import('@/components/CyberpunkIcons').CyberpunkIcons} />
                         </div>
                         <h3 className="text-xl font-bold text-[#FF2E4A]">{item.title}</h3>
                       </div>
