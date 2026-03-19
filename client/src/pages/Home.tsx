@@ -520,17 +520,25 @@ export default function Home() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-30 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 animate-bounce overflow-hidden"
-        style={{
-          boxShadow: '0 0 30px rgba(37, 211, 102, 0.6)',
-        }}
+        className="whatsapp-flip-button"
         title="Conversar no WhatsApp"
       >
-        <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/whatsapp-logo-icone_f3074de5.png"
-          alt="WhatsApp"
-          className="w-full h-full object-cover p-2"
-        />
+        <div className="flip-container">
+          {/* Front face - WhatsApp Logo */}
+          <div className="flip-face front">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/whatsapp-logo-icone_f3074de5.png"
+              alt="WhatsApp"
+            />
+          </div>
+          {/* Back face - Banda Projeto X Logo */}
+          <div className="flip-face back">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_d2c4f3e8.webp"
+              alt="Projeto X"
+            />
+          </div>
+        </div>
       </a>
 
       {/* Footer */}
