@@ -221,9 +221,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl fade-in-up">
               O Espetáculo da Sua Vida
             </p>
-            <p className="text-sm md:text-lg text-gray-300 max-w-2xl mb-12 fade-in-up" style={{ animationDelay: '0.2s' }}>
-              Melhor Banda 2023/2024 - Casamentos, Formaturas, 15 Anos e Confraternizações
-            </p>
+
             <button
               onClick={() => setActiveTab('contato')}
               className="btn-neon fade-in-up"
@@ -244,7 +242,7 @@ export default function Home() {
           {/* SOBRE Tab */}
           {activeTab === 'sobre' && (
             <div className="fade-in-up space-y-12">
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 pt-12">
                 <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
                   QUEM SOMOS
                 </h2>
