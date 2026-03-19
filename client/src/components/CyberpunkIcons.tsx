@@ -93,11 +93,12 @@ export const CyberpunkIcons = {
 
 // Componente wrapper para usar os ícones
 interface CyberpunkIconProps {
-  name: keyof typeof CyberpunkIcons;
+  name: string;
   className?: string;
 }
 
 export function CyberpunkIcon({ name, className = 'w-6 h-6' }: CyberpunkIconProps) {
-  const Icon = CyberpunkIcons[name];
+  const Icon = CyberpunkIcons[name as keyof typeof CyberpunkIcons];
+  if (!Icon) return null;
   return <div className={`text-[#FF2E4A] ${className}`}><Icon /></div>;
 }
