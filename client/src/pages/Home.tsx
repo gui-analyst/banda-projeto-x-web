@@ -388,9 +388,9 @@ export default function Home() {
         title="Conversar no WhatsApp"
       >
         <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/3Kl4eP4HRVow_6e48d6e5.png"
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/whatsapp-logo-icone_f3074de5.png"
           alt="WhatsApp"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover p-2"
         />
       </a>
 
@@ -405,7 +405,9 @@ export default function Home() {
               <Instagram size={24} />
             </a>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-[#FF2E4A] hover:text-white transition-colors hover:scale-110 transform duration-300">
-              <Phone size={24} />
+              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.946 1.347l-.355.192-.368-.06c-1.286-.264-2.514-.666-3.635-1.281l-.635-.343-.673.035C2.896 5.573 1.38 7.089 1.38 8.926c0 1.211.424 2.326 1.263 3.292l.45.523-.179.551c-.635 1.892-.162 3.477 1.318 4.335.348.205.761.328 1.197.358l.498.025.417.383c1.268 1.161 3.07 1.857 5.063 1.857 1.993 0 3.795-.696 5.063-1.857l.417-.383.498-.025c.436-.03.849-.153 1.197-.358 1.48-.858 1.953-2.443 1.318-4.335l-.179-.551.45-.523c.839-.966 1.263-2.081 1.263-3.292 0-1.837-1.516-3.353-3.352-3.353h-.004z" />
+              </svg>
             </a>
             <a href={emailUrl} className="text-[#FF2E4A] hover:text-white transition-colors hover:scale-110 transform duration-300">
               <Mail size={24} />
