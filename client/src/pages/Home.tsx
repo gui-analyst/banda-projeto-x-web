@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Music, Zap, Users, DollarSign, Phone, Mail, Instagram, Heart, Sparkles, ChevronDown, Play } from 'lucide-react';
+import { Music, Zap, Users, DollarSign, Phone, Mail, Instagram, Heart, Sparkles, ChevronDown, Play, Calendar } from 'lucide-react';
 import MobileMenu from '@/components/MobileMenu';
 import { CyberpunkIcon } from '@/components/CyberpunkIcons';
 
@@ -20,6 +20,7 @@ export default function Home() {
     { id: 'sobre', label: 'Projeto X', icon: Music },
     { id: 'diferenciais', label: 'Diferenciais', icon: Sparkles },
     { id: 'videos', label: 'Vídeos', icon: Play },
+    { id: 'shows', label: 'Próximos Shows', icon: Calendar },
   ];
 
   const whatsappNumber = '5516992277417';
@@ -99,6 +100,59 @@ export default function Home() {
       title: 'Banda Projeto X - Show Completo',
       thumbnail: 'https://img.youtube.com/vi/YQL5VoCSWIc/maxresdefault.jpg',
       embedUrl: 'https://www.youtube.com/embed/YQL5VoCSWIc',
+    },
+  ];
+
+  const upcomingShows = [
+    {
+      id: 1,
+      date: '2026-04-10',
+      day: 'Sexta',
+      time: '22:00',
+      event: 'Casamento - Marina & Lucas',
+      location: 'Salao Eventos Franca',
+      city: 'Franca, SP',
+      status: 'Confirmado',
+    },
+    {
+      id: 2,
+      date: '2026-04-18',
+      day: 'Sabado',
+      time: '20:00',
+      event: 'Formatura - Turma 2026',
+      location: 'Clube Recreativo',
+      city: 'Ribeirao Preto, SP',
+      status: 'Confirmado',
+    },
+    {
+      id: 3,
+      date: '2026-05-02',
+      day: 'Sabado',
+      time: '21:00',
+      event: 'Festa de 15 Anos - Sofia',
+      location: 'Espaco Eventos Premium',
+      city: 'Franca, SP',
+      status: 'Confirmado',
+    },
+    {
+      id: 4,
+      date: '2026-05-16',
+      day: 'Sabado',
+      time: '22:00',
+      event: 'Confraternizacao Empresarial',
+      location: 'Hotel Grand Plaza',
+      city: 'Sao Paulo, SP',
+      status: 'Confirmado',
+    },
+    {
+      id: 5,
+      date: '2026-06-05',
+      day: 'Sexta',
+      time: '20:30',
+      event: 'Casamento - Joao & Amanda',
+      location: 'Salao Eventos Franca',
+      city: 'Franca, SP',
+      status: 'Confirmado',
     },
   ];
 
@@ -372,6 +426,91 @@ export default function Home() {
             </div>
           )}
 
+          {/* PRÓXIMOS SHOWS Tab */}
+          {activeTab === 'shows' && (
+            <div className="fade-in-up space-y-12">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                  PRÓXIMOS SHOWS
+                </h2>
+                <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+              </div>
+
+              <div className="space-y-4 md:space-y-6">
+                {upcomingShows.map((show, idx) => (
+                  <div
+                    key={show.id}
+                    className="fade-in-up group cursor-pointer"
+                    style={{ animationDelay: `${idx * 0.1}s` }}
+                  >
+                    <div className="relative overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 bg-black/40 hover:bg-black/60 p-4 md:p-6 neon-border-hover">
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-2">
+                            <div className="text-2xl md:text-3xl font-bold text-[#FF2E4A] font-mono">
+                              {show.date.split('-')[2]}
+                            </div>
+                            <div>
+                              <div className="text-xs md:text-sm text-gray-400 uppercase">
+                                {show.day}
+                              </div>
+                              <div className="text-sm md:text-base text-gray-300">
+                                {show.date.split('-')[1]}/{show.date.split('-')[0]}
+                              </div>
+                            </div>
+                          </div>
+                          <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF2E4A] transition-colors">
+                            {show.event}
+                          </h3>
+                          <div className="space-y-1 text-sm md:text-base text-gray-300">
+                            <p className="flex items-center gap-2">
+                              <span className="text-[#FF2E4A]">📍</span>
+                              {show.location}
+                            </p>
+                            <p className="flex items-center gap-2">
+                              <span className="text-[#FF2E4A]">🏙️</span>
+                              {show.city}
+                            </p>
+                            <p className="flex items-center gap-2">
+                              <span className="text-[#FF2E4A]">⏰</span>
+                              {show.time}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-center md:items-end gap-3">
+                          <span className="px-4 py-2 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] rounded-full text-xs md:text-sm font-bold uppercase">
+                            {show.status}
+                          </span>
+                          <a
+                            href={whatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-4 md:px-6 py-2 md:py-3 bg-[#FF2E4A] text-white rounded-lg font-bold hover:bg-[#FF2E4A]/80 transition-all duration-300 hover:scale-105 text-sm md:text-base"
+                          >
+                            Contratar
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12 p-6 md:p-8 border-2 border-[#FF2E4A]/30 rounded-lg bg-black/40 text-center">
+                <p className="text-gray-300 text-sm md:text-base mb-4">
+                  Não vê sua data aqui? Entre em contato conosco!
+                </p>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 md:px-8 py-3 md:py-4 bg-[#FF2E4A] text-white rounded-lg font-bold hover:bg-[#FF2E4A]/80 transition-all duration-300 hover:scale-105"
+                >
+                  Solicitar Disponibilidade
+                </a>
+              </div>
+            </div>
+          )}
 
         </div>
       </section>
