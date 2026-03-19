@@ -565,7 +565,7 @@ export default function Home() {
               <Instagram size={24} />
             </a>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
-              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/whatsapp-logo-custom_d2526154.png" alt="WhatsApp" className="w-6 h-6" />
+              <img src="https://ibb.co/gMv2gpPT" alt="WhatsApp" className="w-6 h-6" />
             </a>
             <a href={emailUrl} className="text-[#FF2E4A] hover:text-white transition-colors hover:scale-110 transform duration-300">
               <Mail size={24} />
