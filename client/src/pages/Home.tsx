@@ -280,11 +280,12 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="relative h-80 md:h-96 rounded-lg overflow-hidden border-2 border-[#FF2E4A] neon-border order-1 md:order-2 group hover:shadow-2xl transition-all duration-300" style={{ boxShadow: '0 0 30px rgba(255, 46, 74, 0.5)' }}>
-                  <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/moments-collage-projeto-x-7Le45Ri6Q6GiKjBZszMZZm.webp"
-                    alt="Momentos Projeto X"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+                  <div className="grid grid-cols-2 gap-1 h-full">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg" alt="Show 1" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.48_cb459df8.jpeg" alt="Show 2" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.48 (2)_152d62ae.jpeg" alt="Show 3" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/pasted_file_ltDcta_WhatsAppImage2026-03-16at19.51.49_b816d57a.webp" alt="Show 4" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  </div>
                 </div>
               </div>
 
