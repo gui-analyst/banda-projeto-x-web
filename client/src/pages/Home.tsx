@@ -244,7 +244,7 @@ export default function Home() {
             <div className="fade-in-up space-y-12">
               <div className="text-center mb-12 pt-12">
                 <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                  QUEM SOMOS
+                  O PROJETO X
                 </h2>
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
               </div>
