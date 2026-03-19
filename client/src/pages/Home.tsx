@@ -20,7 +20,6 @@ export default function Home() {
     { id: 'sobre', label: 'Projeto X', icon: Music },
     { id: 'diferenciais', label: 'Diferenciais', icon: Sparkles },
     { id: 'videos', label: 'Vídeos', icon: Play },
-    { id: 'contato', label: 'Contratar Agora', icon: DollarSign },
   ];
 
   const whatsappNumber = '5516992277417';
@@ -117,7 +116,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="h-12 md:h-14 w-auto" />
           </div>
-          <nav className="hidden md:flex gap-6">
+          <nav className="hidden md:flex gap-6 items-center">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -131,6 +130,14 @@ export default function Home() {
                 {tab.label}
               </button>
             ))}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow"
+            >
+              Contratar
+            </a>
           </nav>
         </div>
       </header>
@@ -365,106 +372,7 @@ export default function Home() {
             </div>
           )}
 
-          {/* CONTATO Tab */}
-          {activeTab === 'contato' && (
-            <div className="fade-in-up space-y-8">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                  CONTRATAR AGORA
-                </h2>
-                <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-              </div>
 
-              <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-                {/* Valor */}
-                <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border overflow-hidden">
-                  <h3 className="text-2xl font-bold text-white mb-4 display-font flex items-center gap-2">
-                    <CyberpunkIcon name="Energia" className="w-8 h-8" />
-                    Valor do Show
-                  </h3>
-                  <div className="text-4xl md:text-5xl font-bold text-[#FF2E4A] mb-4">
-                    R$ 8.000,00
-                  </div>
-                  <p className="text-gray-300 text-sm md:text-base">
-                    Valor para show de 2 a 2h30 de duração
-                  </p>
-                </div>
-
-                {/* Formas de Pagamento */}
-                <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover overflow-hidden">
-                  <h3 className="text-2xl font-bold text-white mb-4 display-font">
-                    Formas de Pagamento
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <span className="text-[#FF2E4A] font-bold text-lg">•</span>
-                      <div>
-                        <p className="font-bold text-white text-sm md:text-base">Sinal (Garantia)</p>
-                        <p className="text-gray-300 text-xs md:text-sm">R$ 1.500,00 no ato da assinatura do contrato</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <span className="text-[#FF2E4A] font-bold text-lg">•</span>
-                      <div>
-                        <p className="font-bold text-white text-sm md:text-base">Restante</p>
-                        <p className="text-gray-300 text-xs md:text-sm">7 dias antes do evento</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Inclusos */}
-                <div className="p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover overflow-hidden">
-                  <h3 className="text-2xl font-bold text-white mb-4 display-font">
-                    ✓ Inclusos
-                  </h3>
-                  <div className="space-y-2">
-                    {[
-                      'CO2',
-                      'Shot de Bebida',
-                      'Violada X',
-                      'Dançarino X',
-                      'Óculos X',
-                      'Efeitos Especiais',
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <span className="text-[#FF2E4A] text-lg">✓</span>
-                        <span className="text-white text-xs md:text-sm">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Importante */}
-              <div className="p-6 md:p-8 rounded-lg border-2 border-yellow-600/50 bg-yellow-900/10 overflow-hidden">
-                <h3 className="text-xl font-bold text-yellow-400 mb-3 display-font">
-                  ⚠️ Importante
-                </h3>
-                <p className="text-gray-300 text-sm md:text-base">
-                  A contratação de Som, Estrutura, Palco, Iluminação e Backline é por conta do contratante, conforme o nosso Rider Técnico, que será enviado junto com o fechamento.
-                </p>
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="grid md:grid-cols-2 gap-4 mt-8">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-neon text-center py-4"
-                >
-                  💬 CONVERSAR NO WHATSAPP
-                </a>
-                <a
-                  href={emailUrl}
-                  className="btn-neon text-center py-4"
-                >
-                  📧 ENVIAR EMAIL
-                </a>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 
