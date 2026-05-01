@@ -326,6 +326,20 @@
     }
   }
   
+  @keyframes shimmer-wave {
+    0% {
+      background-position: -1000px 0;
+      box-shadow: 0 4px 15px rgba(255, 46, 74, 0.3);
+    }
+    50% {
+      box-shadow: 0 8px 25px rgba(255, 46, 74, 0.6), 0 0 30px rgba(255, 46, 74, 0.4);
+    }
+    100% {
+      background-position: 1000px 0;
+      box-shadow: 0 4px 15px rgba(255, 46, 74, 0.3);
+    }
+  }
+  
   @keyframes rotate-border {
     0% {
       border-color: #FF2E4A;
@@ -687,6 +701,38 @@
   }
   
   .btn-neon:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(255, 46, 74, 0.4);
+  }
+  
+  /* Shimmer Wave Button - For Hero CTA */
+  .btn-shimmer-wave {
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #FF2E4A 0%, #FF2E4A 50%, #FF6B7A 50%, #FF2E4A 100%);
+    background-size: 200% 100%;
+    border-radius: 0.65rem;
+    transition: all 0.3s;
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(255, 46, 74, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    animation: shimmer-wave 3s ease-in-out infinite;
+  }
+  
+  .btn-shimmer-wave:hover {
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 46, 74, 0.6), 0 0 30px rgba(255, 46, 74, 0.4);
+    transform: translateY(-2px);
+    animation-play-state: paused;
+  }
+  
+  .btn-shimmer-wave:active {
     transform: translateY(0);
     box-shadow: 0 2px 10px rgba(255, 46, 74, 0.4);
   }

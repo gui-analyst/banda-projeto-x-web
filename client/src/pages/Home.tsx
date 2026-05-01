@@ -223,7 +223,7 @@ export default function Home() {
               </p>
               <button
                 onClick={() => setActiveTab('sobre')}
-                className="btn-primary fade-in-up inline-block"
+                className="btn-shimmer-wave fade-in-up inline-block"
                 style={{ animationDelay: '0.4s' }}
               >
                 SOLICITAR ORÇAMENTO
