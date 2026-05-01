@@ -200,11 +200,14 @@ export default function Home() {
           {activeTab === 'landing' && (
             <div className="space-y-20">
               {/* Hero Section */}
-              <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden -mx-4 -mt-24 pt-24">
+              <section className="relative w-screen min-h-screen flex items-center justify-center overflow-hidden -mx-4 -mt-24 pt-24">
                 <div
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                   style={{
                     backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/Notes_260313_004739_dfe_4d696c27.png)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundAttachment: 'fixed',
                     transform: `translateY(${scrollY * 0.5}px)`,
                   }}
                 />
