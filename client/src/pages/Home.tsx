@@ -1,12 +1,11 @@
-'use client';
 
 import { useState, useEffect } from 'react';
-import { Music, Zap, Users, DollarSign, Phone, Mail, Instagram, Heart, Sparkles, ChevronDown, Play, Calendar } from 'lucide-react';
+import { Music, Zap, Users, DollarSign, Phone, Mail, Instagram, Heart, Sparkles, ChevronDown, Play, Calendar, ArrowRight } from 'lucide-react';
 import MobileMenu from '@/components/MobileMenu';
 import { CyberpunkIcon } from '@/components/CyberpunkIcons';
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('sobre');
+  const [activeTab, setActiveTab] = useState('landing');
   const [scrollY, setScrollY] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
 
@@ -17,6 +16,7 @@ export default function Home() {
   }, []);
 
   const tabs = [
+    { id: 'landing', label: 'Home', icon: Music },
     { id: 'sobre', label: 'Projeto X', icon: Music },
     { id: 'diferenciais', label: 'Diferenciais', icon: Sparkles },
     { id: 'videos', label: 'Vídeos', icon: Play },
@@ -156,9 +156,6 @@ export default function Home() {
     },
   ];
 
-  // Show hero banner only on 'sobre' tab
-  const showHeroBanner = activeTab === 'sobre';
-
   return (
     <div className="hexagon-bg min-h-screen">
       {/* Mobile Menu */}
@@ -196,49 +193,231 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section - Only shown on 'sobre' tab */}
-      {showHeroBanner && (
-        <section className="relative w-full h-screen pt-20 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/Notes_260313_004739_dfe_4d696c27.png)',
-              transform: `translateY(${scrollY * 0.5}px)`,
-            }}
-          />
-          <div className="absolute inset-0 bg-black/50" />
-
-          {/* Animated Background Elements */}
-          <div className="absolute top-20 left-10 w-32 h-32 border-2 border-[#FF2E4A]/30 rounded-full animate-pulse scale-pulse" />
-          <div className="absolute bottom-20 right-10 w-48 h-48 border-2 border-[#FF2E4A]/20 rounded-full animate-pulse scale-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 right-20 w-24 h-24 border-2 border-[#FF2E4A]/20 rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
-
-          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="h-32 md:h-48 w-auto mb-8 slide-in-left" />
-            <h1 className="text-3xl md:text-5xl font-bold display-font text-white mb-4 slide-in-left glow-text hidden">
-              PROJETO<span className="text-[#FF2E4A]">X</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl fade-in-up">
-              O Espetáculo da Sua Vida
-            </p>
-
-            <button
-              onClick={() => setActiveTab('contato')}
-              className="btn-neon fade-in-up"
-              style={{ animationDelay: '0.4s' }}
-            >
-              SOLICITAR ORÇAMENTO
-            </button>
-            <div className="absolute bottom-8 animate-bounce">
-              <ChevronDown className="text-[#FF2E4A] w-8 h-8" />
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Main Content Section */}
-      <section className={`${showHeroBanner ? '' : 'pt-24'} pb-20 px-4`}>
+      {/* Main Content */}
+      <section className="pt-24 pb-20 px-4">
         <div className="container mx-auto">
+          {/* LANDING PAGE - Home */}
+          {activeTab === 'landing' && (
+            <div className="space-y-20">
+              {/* Hero Section */}
+              <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden -mx-4 -mt-24 pt-24">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/Notes_260313_004739_dfe_4d696c27.png)',
+                    transform: `translateY(${scrollY * 0.5}px)`,
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/50" />
+
+                {/* Animated Background Elements */}
+                <div className="absolute top-20 left-10 w-32 h-32 border-2 border-[#FF2E4A]/30 rounded-full animate-pulse scale-pulse" />
+                <div className="absolute bottom-20 right-10 w-48 h-48 border-2 border-[#FF2E4A]/20 rounded-full animate-pulse scale-pulse" style={{ animationDelay: '1s' }} />
+                <div className="absolute top-1/2 right-20 w-24 h-24 border-2 border-[#FF2E4A]/20 rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
+
+                <div className="relative z-10 text-center px-4">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="h-32 md:h-48 w-auto mb-8 slide-in-left mx-auto" />
+                  <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl fade-in-up mx-auto">
+                    O Espetáculo da Sua Vida
+                  </p>
+                  <button
+                    onClick={() => setActiveTab('sobre')}
+                    className="btn-neon fade-in-up inline-block"
+                    style={{ animationDelay: '0.4s' }}
+                  >
+                    SOLICITAR ORÇAMENTO
+                  </button>
+                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                    <ChevronDown className="text-[#FF2E4A] w-8 h-8" />
+                  </div>
+                </div>
+              </section>
+
+              {/* Preview: Projeto X */}
+              <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                    O PROJETO X
+                  </h2>
+                  <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+                  <div className="space-y-4">
+                    <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                      Somos a <span className="text-[#FF2E4A] font-bold">Banda Projeto X</span>, uma das maiores referências do Brasil em casamentos, formaturas, confraternizações e festas de 15 anos.
+                    </p>
+                    <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                      Vencedores do prêmio de <span className="text-[#FF2E4A] font-bold">Melhor Banda 2023/2024</span>, somos reconhecidos por entregar um espetáculo completo, com energia do começo ao fim, sem pausas.
+                    </p>
+                  </div>
+                  <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border-2 border-[#FF2E4A] neon-border">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg" alt="Projeto X" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <button
+                    onClick={() => setActiveTab('sobre')}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                  >
+                    Ver Mais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </section>
+
+              {/* Preview: Diferenciais */}
+              <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                    NOSSOS DIFERENCIAIS
+                  </h2>
+                  <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
+                  {diferenciais.slice(0, 2).map((diferencial, idx) => (
+                    <div
+                      key={idx}
+                      className="group fade-in-up overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover"
+                      style={{ animationDelay: `${idx * 0.1}s` }}
+                    >
+                      <div className="relative h-40 md:h-48 overflow-hidden bg-black/60">
+                        <img
+                          src={diferencial.image}
+                          alt={diferencial.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="p-4 md:p-6 bg-black/40 group-hover:bg-black/60 transition-all duration-300">
+                        <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font mb-2">
+                          {diferencial.title}
+                        </h3>
+                        <p className="text-xs md:text-sm text-gray-300 line-clamp-2">
+                          {diferencial.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center">
+                  <button
+                    onClick={() => setActiveTab('diferenciais')}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                  >
+                    Ver Todos os Diferenciais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </section>
+
+              {/* Preview: Vídeos */}
+              <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                    MELHORES MOMENTOS
+                  </h2>
+                  <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
+                  {videos.slice(0, 3).map((video, idx) => (
+                    <div
+                      key={video.id}
+                      className="group cursor-pointer fade-in-up"
+                      style={{ animationDelay: `${idx * 0.1}s` }}
+                    >
+                      <div className="relative overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover">
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                          <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
+                          </div>
+                        </div>
+                      </div>
+                      <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
+                        {video.title}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center">
+                  <button
+                    onClick={() => setActiveTab('videos')}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                  >
+                    Ver Todos os Vídeos <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </section>
+
+              {/* Preview: Próximos Shows */}
+              <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                    PRÓXIMOS SHOWS
+                  </h2>
+                  <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+                </div>
+
+                <div className="space-y-4 mb-8">
+                  {upcomingShows.slice(0, 2).map((show) => (
+                    <div
+                      key={show.id}
+                      className="p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover fade-in-up"
+                    >
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div>
+                          <p className="text-[#FF2E4A] font-bold text-sm md:text-base">
+                            {show.day}, {new Date(show.date).toLocaleDateString('pt-BR')} às {show.time}
+                          </p>
+                          <h3 className="text-lg md:text-xl font-bold text-white mt-1">
+                            {show.event}
+                          </h3>
+                          <p className="text-gray-400 text-sm md:text-base mt-1">
+                            {show.location} • {show.city}
+                          </p>
+                        </div>
+                        <span className="inline-block px-3 py-1 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] text-xs md:text-sm font-bold rounded">
+                          {show.status}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center">
+                  <button
+                    onClick={() => setActiveTab('shows')}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                  >
+                    Ver Todos os Shows <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </section>
+
+              {/* CTA Final */}
+              <section className="text-center py-12">
+                <h2 className="text-3xl md:text-4xl font-bold display-font text-white mb-6 glow-text">
+                  Pronto para o Espetáculo?
+                </h2>
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF2E4A] text-white font-bold rounded text-lg hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                >
+                  CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </section>
+            </div>
+          )}
+
           {/* SOBRE Tab */}
           {activeTab === 'sobre' && (
             <div className="fade-in-up space-y-12">
@@ -288,8 +467,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-
-
             </div>
           )}
 
@@ -337,8 +514,6 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-
-
             </div>
           )}
 
@@ -384,12 +559,12 @@ export default function Home() {
 
               {/* Video Modal */}
               {selectedVideo && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4" onClick={() => setSelectedVideo(null)}>
-                  <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden border-2 border-[#FF2E4A]" onClick={(e) => e.stopPropagation()}>
+                <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setSelectedVideo(null)}>
+                  <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden" onClick={(e) => e.stopPropagation()}>
                     <iframe
                       width="100%"
                       height="100%"
-                      src={videos.find(v => v.id === selectedVideo)?.embedUrl}
+                      src={videos.find((v) => v.id === selectedVideo)?.embedUrl}
                       title="Video"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -397,7 +572,7 @@ export default function Home() {
                     />
                     <button
                       onClick={() => setSelectedVideo(null)}
-                      className="absolute top-4 right-4 w-10 h-10 bg-[#FF2E4A] rounded-full flex items-center justify-center text-white font-bold hover:bg-[#FF2E4A]/80 transition-colors"
+                      className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition-all"
                     >
                       ✕
                     </button>
@@ -417,144 +592,134 @@ export default function Home() {
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
               </div>
 
-              <div className="space-y-4 md:space-y-6">
-                {upcomingShows.map((show, idx) => (
+              <div className="space-y-4">
+                {upcomingShows.map((show) => (
                   <div
                     key={show.id}
-                    className="fade-in-up group cursor-pointer"
-                    style={{ animationDelay: `${idx * 0.1}s` }}
+                    className="p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover fade-in-up"
                   >
-                    <div className="relative overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 bg-black/40 hover:bg-black/60 p-4 md:p-6 neon-border-hover">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-2">
-                            <div className="text-2xl md:text-3xl font-bold text-[#FF2E4A] font-mono">
-                              {show.date.split('-')[2]}
-                            </div>
-                            <div>
-                              <div className="text-xs md:text-sm text-gray-400 uppercase">
-                                {show.day}
-                              </div>
-                              <div className="text-sm md:text-base text-gray-300">
-                                {show.date.split('-')[1]}/{show.date.split('-')[0]}
-                              </div>
-                            </div>
-                          </div>
-                          <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-[#FF2E4A] transition-colors">
-                            {show.event}
-                          </h3>
-                          <div className="space-y-1 text-sm md:text-base text-gray-300">
-                            <p className="flex items-center gap-2">
-                              <span className="text-[#FF2E4A]">📍</span>
-                              {show.location}
-                            </p>
-                            <p className="flex items-center gap-2">
-                              <span className="text-[#FF2E4A]">🏙️</span>
-                              {show.city}
-                            </p>
-                            <p className="flex items-center gap-2">
-                              <span className="text-[#FF2E4A]">⏰</span>
-                              {show.time}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex flex-col items-center md:items-end gap-3">
-                          <span className="px-4 py-2 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] rounded-full text-xs md:text-sm font-bold uppercase">
-                            {show.status}
-                          </span>
-                          <a
-                            href={whatsappUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="px-4 md:px-6 py-2 md:py-3 bg-[#FF2E4A] text-white rounded-lg font-bold hover:bg-[#FF2E4A]/80 transition-all duration-300 hover:scale-105 text-sm md:text-base"
-                          >
-                            Contratar
-                          </a>
-                        </div>
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                      <div>
+                        <p className="text-[#FF2E4A] font-bold text-sm md:text-base">
+                          {show.day}, {new Date(show.date).toLocaleDateString('pt-BR')} às {show.time}
+                        </p>
+                        <h3 className="text-lg md:text-xl font-bold text-white mt-1">
+                          {show.event}
+                        </h3>
+                        <p className="text-gray-400 text-sm md:text-base mt-1">
+                          {show.location} • {show.city}
+                        </p>
                       </div>
+                      <span className="inline-block px-3 py-1 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] text-xs md:text-sm font-bold rounded">
+                        {show.status}
+                      </span>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-12 p-6 md:p-8 border-2 border-[#FF2E4A]/30 rounded-lg bg-black/40 text-center">
-                <p className="text-gray-300 text-sm md:text-base mb-4">
-                  Não vê sua data aqui? Entre em contato conosco!
+              <div className="text-center mt-12">
+                <p className="text-gray-400 mb-6">
+                  Interessado em contratar a banda para seu evento?
                 </p>
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 md:px-8 py-3 md:py-4 bg-[#FF2E4A] text-white rounded-lg font-bold hover:bg-[#FF2E4A]/80 transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF2E4A] text-white font-bold rounded text-lg hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
                 >
-                  Solicitar Disponibilidade
+                  CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
           )}
-
         </div>
       </section>
 
-      {/* WhatsApp Floating Button */}
+      {/* Floating WhatsApp Button with 3D Flip */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="whatsapp-flip-button"
-        title="Conversar no WhatsApp"
+        className="fixed bottom-8 right-8 z-30 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center overflow-hidden perspective hover:scale-110 transition-transform duration-300"
+        style={{
+          perspective: '1000px',
+        }}
       >
-        <div className="flip-container">
-          {/* Sparkle particles */}
-          <div className="sparkle"></div>
-          <div className="sparkle"></div>
-          <div className="sparkle"></div>
-          <div className="sparkle"></div>
-          
-          {/* Orbiting sparkles */}
-          <div className="orbit-sparkle"></div>
-          <div className="orbit-sparkle"></div>
-          
-          {/* Light flare effect */}
-          <div className="flip-flare"></div>
-          
-          {/* Front face - WhatsApp Logo */}
-          <div className="flip-face front">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/whatsapp-logo-icone_f3074de5.png"
-              alt="WhatsApp"
-            />
+        <div className="relative w-full h-full flip-container" style={{ transformStyle: 'preserve-3d', animation: 'flip-3d 6s infinite' }}>
+          {/* Front - WhatsApp Logo */}
+          <div
+            className="absolute w-full h-full flex items-center justify-center bg-gradient-to-br from-[#FF2E4A] to-[#FF2E4A]/80 rounded-full border-2 border-white/20"
+            style={{ backfaceVisibility: 'hidden' }}
+          >
+            <img src="https://i.ibb.co/99wDYLVT/Design-sem-nome-2.png" alt="WhatsApp" className="w-10 h-10 md:w-12 md:h-12" />
           </div>
-          {/* Back face - Banda Projeto X Logo */}
-          <div className="flip-face back">
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp"
-              alt="Projeto X"
-            />
+
+          {/* Back - Projeto X Logo */}
+          <div
+            className="absolute w-full h-full flex items-center justify-center bg-gradient-to-br from-[#FF2E4A] to-[#FF2E4A]/80 rounded-full border-2 border-white/20"
+            style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+          >
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="w-10 h-10 md:w-12 md:h-12" />
           </div>
+
+          {/* Sparkles and Flares */}
+          <div className="sparkles-burst absolute inset-0 pointer-events-none" style={{ animation: 'sparkles-burst 6s infinite' }} />
+          <div className="glow-pulse absolute inset-0 rounded-full" style={{ animation: 'glow-pulse 6s infinite', boxShadow: '0 0 20px rgba(255, 46, 74, 0.6)' }} />
+          <div className="light-ray absolute inset-0 rounded-full" style={{ animation: 'light-ray 6s infinite' }} />
+          <div className="orbit-sparkles absolute inset-0 pointer-events-none" style={{ animation: 'orbit-sparkles 6s infinite' }} />
+          <div className="flare-light absolute inset-0 rounded-full pointer-events-none" style={{ animation: 'flare-light 6s infinite' }} />
         </div>
       </a>
 
       {/* Footer */}
-      <footer className="border-t border-[#FF2E4A]/20 bg-black/80 py-8 px-4">
-        <div className="container mx-auto text-center">
-          <p className="text-gray-400 mb-4 text-sm md:text-base">
-            © 2025 Banda Projeto X. Todos os direitos reservados.
-          </p>
-          <div className="flex justify-center gap-6 mb-4">
-            <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="text-[#FF2E4A] hover:text-white transition-colors hover:scale-110 transform duration-300">
-              <Instagram size={24} />
-            </a>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform duration-300">
-              <img src="https://i.ibb.co/99wDYLVT/Design-sem-nome-2.png" alt="WhatsApp" className="w-6 h-6" />
-            </a>
-            <a href={emailUrl} className="text-[#FF2E4A] hover:text-white transition-colors hover:scale-110 transform duration-300">
-              <Mail size={24} />
-            </a>
+      <footer className="bg-black/80 border-t border-[#FF2E4A]/20 py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div className="text-center">
+              <h3 className="text-lg font-bold text-white mb-4 display-font">REDES SOCIAIS</h3>
+              <div className="flex gap-4 justify-center">
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#FF2E4A] hover:bg-[#FF2E4A] transition-all duration-300 group">
+                  <Instagram className="w-5 h-5 text-[#FF2E4A] group-hover:text-white transition-colors" />
+                </a>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#FF2E4A] hover:bg-[#FF2E4A] transition-all duration-300">
+                  <img src="https://i.ibb.co/99wDYLVT/Design-sem-nome-2.png" alt="WhatsApp" className="w-5 h-5" />
+                </a>
+                <a href={emailUrl} className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#FF2E4A] hover:bg-[#FF2E4A] transition-all duration-300 group">
+                  <Mail className="w-5 h-5 text-[#FF2E4A] group-hover:text-white transition-colors" />
+                </a>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-lg font-bold text-white mb-4 display-font">CONTATO</h3>
+              <p className="text-gray-400 text-sm">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#FF2E4A] transition-colors">
+                  +55 16 99227-7417
+                </a>
+              </p>
+              <p className="text-gray-400 text-sm">
+                <a href={emailUrl} className="hover:text-[#FF2E4A] transition-colors">
+                  {emailAddress}
+                </a>
+              </p>
+            </div>
+
+            <div className="text-center">
+              <h3 className="text-lg font-bold text-white mb-4 display-font">INSTAGRAM</h3>
+              <p className="text-gray-400 text-sm">
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#FF2E4A] transition-colors">
+                  @projetoxbanda
+                </a>
+              </p>
+            </div>
           </div>
-          <p className="text-xs md:text-sm text-gray-500">
-            Feito com <Heart size={14} className="inline text-[#FF2E4A]" /> por Guilherme Correa para a Banda Projeto X
-          </p>
+
+          <div className="border-t border-[#FF2E4A]/20 pt-8 text-center">
+            <p className="text-gray-400 text-sm">
+              Feito com <Heart className="w-4 h-4 text-[#FF2E4A] inline" /> por Guilherme Correa para a Banda Projeto X © 2026
+            </p>
+          </div>
         </div>
       </footer>
     </div>
