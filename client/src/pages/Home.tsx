@@ -663,34 +663,31 @@ export default function Home() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-30 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center overflow-hidden perspective hover:scale-110 transition-transform duration-300"
-        style={{
-          perspective: '1000px',
-        }}
+        className="whatsapp-flip-button"
       >
-        <div className="relative w-full h-full flip-container" style={{ transformStyle: 'preserve-3d', animation: 'flip-3d 6s infinite' }}>
+        <div className="flip-container">
           {/* Front - WhatsApp Logo */}
-          <div
-            className="absolute w-full h-full flex items-center justify-center bg-gradient-to-br from-[#FF2E4A] to-[#FF2E4A]/80 rounded-full border-2 border-white/20"
-            style={{ backfaceVisibility: 'hidden' }}
-          >
-            <img src="https://i.ibb.co/99wDYLVT/Design-sem-nome-2.png" alt="WhatsApp" className="w-10 h-10 md:w-12 md:h-12" />
+          <div className="flip-face front">
+            <img src="https://i.ibb.co/99wDYLVT/Design-sem-nome-2.png" alt="WhatsApp" />
           </div>
 
           {/* Back - Projeto X Logo */}
-          <div
-            className="absolute w-full h-full flex items-center justify-center bg-gradient-to-br from-[#FF2E4A] to-[#FF2E4A]/80 rounded-full border-2 border-white/20"
-            style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-          >
-            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="w-10 h-10 md:w-12 md:h-12" />
+          <div className="flip-face back">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" />
           </div>
 
-          {/* Sparkles and Flares */}
-          <div className="sparkles-burst absolute inset-0 pointer-events-none" style={{ animation: 'sparkles-burst 6s infinite' }} />
-          <div className="glow-pulse absolute inset-0 rounded-full" style={{ animation: 'glow-pulse 6s infinite', boxShadow: '0 0 20px rgba(255, 46, 74, 0.6)' }} />
-          <div className="light-ray absolute inset-0 rounded-full" style={{ animation: 'light-ray 6s infinite' }} />
-          <div className="orbit-sparkles absolute inset-0 pointer-events-none" style={{ animation: 'orbit-sparkles 6s infinite' }} />
-          <div className="flare-light absolute inset-0 rounded-full pointer-events-none" style={{ animation: 'flare-light 6s infinite' }} />
+          {/* Sparkle particles */}
+          <div className="sparkle" />
+          <div className="sparkle" />
+          <div className="sparkle" />
+          <div className="sparkle" />
+
+          {/* Flare effect */}
+          <div className="flip-flare" />
+
+          {/* Orbiting sparkles */}
+          <div className="orbit-sparkle" />
+          <div className="orbit-sparkle" />
         </div>
       </a>
 
