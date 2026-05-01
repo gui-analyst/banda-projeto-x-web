@@ -223,14 +223,11 @@ export default function Home() {
               </p>
               <button
                 onClick={() => setActiveTab('sobre')}
-                className="btn-shimmer-wave fade-in-up inline-block"
+                className="btn-pulse-glow fade-in-up inline-block"
                 style={{ animationDelay: '0.4s' }}
               >
                 SOLICITAR ORÇAMENTO
               </button>
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <ChevronDown className="text-[#FF2E4A] w-8 h-8" />
-              </div>
             </div>
           </section>
 
