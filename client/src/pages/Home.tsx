@@ -16,11 +16,11 @@ export default function Home() {
   }, []);
 
   const tabs = [
-    { id: 'landing', label: 'Home', icon: Music },
-    { id: 'sobre', label: 'Projeto X', icon: Music },
-    { id: 'diferenciais', label: 'Diferenciais', icon: Sparkles },
-    { id: 'videos', label: 'Vídeos', icon: Play },
-    { id: 'shows', label: 'Próximos Shows', icon: Calendar },
+    { id: 'landing', label: 'HOME', icon: Music },
+    { id: 'sobre', label: 'PROJETO X', icon: Music },
+    { id: 'diferenciais', label: 'DIFERENCIAIS', icon: Sparkles },
+    { id: 'videos', label: 'VÍDEOS', icon: Play },
+    { id: 'shows', label: 'PRÓXIMOS SHOWS', icon: Calendar },
   ];
 
   const whatsappNumber = '5516992277417';
@@ -172,7 +172,7 @@ export default function Home() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`text-sm font-bold transition-all duration-300 ${
+                className={`text-xs font-bold transition-all duration-300 display-font ${
                   activeTab === tab.id
                     ? 'text-[#FF2E4A] text-glow'
                     : 'text-white hover:text-[#FF2E4A]'
@@ -181,14 +181,12 @@ export default function Home() {
                 {tab.label}
               </button>
             ))}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow"
+            <button
+              onClick={() => window.open(whatsappUrl, '_blank')}
+              className="btn-primary text-xs md:text-sm"
             >
-              Contratar
-            </a>
+              CONTRATAR
+            </button>
           </nav>
         </div>
       </header>
@@ -225,7 +223,7 @@ export default function Home() {
               </p>
               <button
                 onClick={() => setActiveTab('sobre')}
-                className="btn-neon fade-in-up inline-block"
+                className="btn-primary fade-in-up inline-block"
                 style={{ animationDelay: '0.4s' }}
               >
                 SOLICITAR ORÇAMENTO
@@ -266,9 +264,9 @@ export default function Home() {
                   <div className="text-center">
                     <button
                       onClick={() => setActiveTab('sobre')}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                      className="btn-primary inline-flex items-center gap-2 group"
                     >
-                      Ver Mais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      VER MAIS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </section>
@@ -311,9 +309,9 @@ export default function Home() {
                   <div className="text-center">
                     <button
                       onClick={() => setActiveTab('diferenciais')}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                      className="btn-primary inline-flex items-center gap-2 group"
                     >
-                      Ver Todos os Diferenciais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      VER TODOS OS DIFERENCIAIS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </section>
@@ -356,9 +354,9 @@ export default function Home() {
                   <div className="text-center">
                     <button
                       onClick={() => setActiveTab('videos')}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                      className="btn-primary inline-flex items-center gap-2 group"
                     >
-                      Ver Todos os Vídeos <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      VER TODOS OS VÍDEOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </section>
@@ -401,9 +399,9 @@ export default function Home() {
                   <div className="text-center">
                     <button
                       onClick={() => setActiveTab('shows')}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                      className="btn-primary inline-flex items-center gap-2 group"
                     >
-                      Ver Todos os Shows <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      VER TODOS OS SHOWS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </section>
@@ -413,14 +411,12 @@ export default function Home() {
                   <h2 className="text-3xl md:text-4xl font-bold display-font text-white mb-6 glow-text">
                     Pronto para o Espetáculo?
                   </h2>
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF2E4A] text-white font-bold rounded text-lg hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                  <button
+                    onClick={() => window.open(whatsappUrl, '_blank')}
+                    className="btn-primary inline-flex items-center gap-2 group text-lg"
                   >
                     CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </a>
+                  </button>
                 </section>
               </div>
             </div>
@@ -644,14 +640,12 @@ export default function Home() {
                 <p className="text-gray-400 mb-6">
                   Interessado em contratar a banda para seu evento?
                 </p>
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF2E4A] text-white font-bold rounded text-lg hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
-                >
-                  CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+              <button
+                onClick={() => window.open(whatsappUrl, '_blank')}
+                className="btn-primary inline-flex items-center gap-2 group text-lg"
+              >
+                CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
               </div>
             </div>
           </div>
