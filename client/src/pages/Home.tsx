@@ -289,15 +289,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Aviso Importante */}
-              <div className="p-6 md:p-8 rounded-lg border-2 border-yellow-600/50 bg-yellow-900/10 overflow-hidden">
-                <h3 className="text-xl font-bold text-yellow-400 mb-3 display-font">
-                  ⚠️ Importante
-                </h3>
-                <p className="text-gray-300 text-sm md:text-base">
-                  A contratação de Som, Estrutura, Palco, Iluminação e Backline é por conta do contratante, conforme o nosso Rider Técnico, que será enviado junto com o fechamento.
-                </p>
-              </div>
+
             </div>
           )}
 
@@ -346,17 +338,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="mt-12 p-6 md:p-8 rounded-lg border-2 border-[#FF2E4A] bg-black/40 neon-border hover:shadow-2xl transition-all duration-300" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.5)' }}>
-                <h3 className="text-2xl font-bold text-white mb-4 display-font">
-                  ⏱️ Duração do Show
-                </h3>
-                <p className="text-lg md:text-xl text-[#FF2E4A] font-bold">
-                  2 horas a 2 horas e 30 minutos
-                </p>
-                <p className="text-gray-300 mt-2 text-sm md:text-base">
-                  Energia do início ao fim, sem pausas. Sempre com muita interação com o público e momentos marcantes.
-                </p>
-              </div>
+
             </div>
           )}
 
