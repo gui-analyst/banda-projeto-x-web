@@ -727,7 +727,7 @@ export default function Home() {
 
           <div className="border-t border-[#FF2E4A]/20 pt-8 text-center">
             <p className="text-gray-400 text-sm">
-              Feito com <Heart className="w-4 h-4 text-[#FF2E4A] inline" /> por Guilherme Correa para a Banda Projeto X © 2026
+              Banda Projeto X ©. Todos os direitos reservados.
             </p>
           </div>
         </div>
