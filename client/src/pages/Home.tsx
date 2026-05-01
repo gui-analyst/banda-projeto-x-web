@@ -193,238 +193,247 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <section className="pt-24 pb-20 px-4">
-        <div className="container mx-auto">
-          {/* LANDING PAGE - Home */}
-          {activeTab === 'landing' && (
-            <div className="space-y-20">
-              {/* Hero Section */}
-              <section className="relative w-screen min-h-screen flex items-center justify-center overflow-hidden -mx-4 -mt-24 pt-24">
-                <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                  style={{
-                    backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/Notes_260313_004739_dfe_4d696c27.png)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundAttachment: 'fixed',
-                    transform: `translateY(${scrollY * 0.5}px)`,
-                  }}
-                />
-                <div className="absolute inset-0 bg-black/50" />
+      {/* LANDING PAGE - Home */}
+      {activeTab === 'landing' && (
+        <div>
+          {/* Hero Section */}
+          <section className="relative w-full h-screen flex items-center justify-center overflow-hidden" style={{ marginTop: '-96px', paddingTop: '96px' }}>
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/Notes_260313_004739_dfe_4d696c27.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundAttachment: 'fixed',
+                width: '100%',
+                height: '100%',
+                transform: `translateY(${scrollY * 0.5}px)`,
+              }}
+            />
+            <div className="absolute inset-0 bg-black/50" />
 
-                {/* Animated Background Elements */}
-                <div className="absolute top-20 left-10 w-32 h-32 border-2 border-[#FF2E4A]/30 rounded-full animate-pulse scale-pulse" />
-                <div className="absolute bottom-20 right-10 w-48 h-48 border-2 border-[#FF2E4A]/20 rounded-full animate-pulse scale-pulse" style={{ animationDelay: '1s' }} />
-                <div className="absolute top-1/2 right-20 w-24 h-24 border-2 border-[#FF2E4A]/20 rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
+            {/* Animated Background Elements */}
+            <div className="absolute top-20 left-10 w-32 h-32 border-2 border-[#FF2E4A]/30 rounded-full animate-pulse scale-pulse" />
+            <div className="absolute bottom-20 right-10 w-48 h-48 border-2 border-[#FF2E4A]/20 rounded-full animate-pulse scale-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute top-1/2 right-20 w-24 h-24 border-2 border-[#FF2E4A]/20 rounded-full" style={{ animation: 'pulse-glow 3s ease-in-out infinite' }} />
 
-                <div className="relative z-10 text-center px-4">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="h-32 md:h-48 w-auto mb-8 slide-in-left mx-auto" />
-                  <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl fade-in-up mx-auto">
-                    O Espetáculo da Sua Vida
-                  </p>
-                  <button
-                    onClick={() => setActiveTab('sobre')}
-                    className="btn-neon fade-in-up inline-block"
-                    style={{ animationDelay: '0.4s' }}
-                  >
-                    SOLICITAR ORÇAMENTO
-                  </button>
-                  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <ChevronDown className="text-[#FF2E4A] w-8 h-8" />
+            <div className="relative z-10 text-center px-4 max-w-4xl">
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/logo_b9698840.webp" alt="Projeto X" className="h-32 md:h-48 w-auto mb-8 slide-in-left mx-auto" />
+              <p className="text-xl md:text-2xl text-white mb-8 fade-in-up mx-auto">
+                O Espetáculo da Sua Vida
+              </p>
+              <button
+                onClick={() => setActiveTab('sobre')}
+                className="btn-neon fade-in-up inline-block"
+                style={{ animationDelay: '0.4s' }}
+              >
+                SOLICITAR ORÇAMENTO
+              </button>
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <ChevronDown className="text-[#FF2E4A] w-8 h-8" />
+              </div>
+            </div>
+          </section>
+
+          {/* Main Content Container */}
+          <section className="pt-20 pb-20 px-4">
+            <div className="container mx-auto">
+              <div className="space-y-20">
+                {/* Preview: Projeto X */}
+                <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
+                  <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                      O PROJETO X
+                    </h2>
+                    <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
                   </div>
-                </div>
-              </section>
 
-              {/* Preview: Projeto X */}
-              <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                    O PROJETO X
-                  </h2>
-                  <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-                  <div className="space-y-4">
-                    <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                      Somos a <span className="text-[#FF2E4A] font-bold">Banda Projeto X</span>, uma das maiores referências do Brasil em casamentos, formaturas, confraternizações e festas de 15 anos.
-                    </p>
-                    <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                      Vencedores do prêmio de <span className="text-[#FF2E4A] font-bold">Melhor Banda 2023/2024</span>, somos reconhecidos por entregar um espetáculo completo, com energia do começo ao fim, sem pausas.
-                    </p>
-                  </div>
-                  <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border-2 border-[#FF2E4A] neon-border">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg" alt="Projeto X" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <button
-                    onClick={() => setActiveTab('sobre')}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
-                  >
-                    Ver Mais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </section>
-
-              {/* Preview: Diferenciais */}
-              <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                    NOSSOS DIFERENCIAIS
-                  </h2>
-                  <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
-                  {diferenciais.slice(0, 2).map((diferencial, idx) => (
-                    <div
-                      key={idx}
-                      className="group fade-in-up overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover"
-                      style={{ animationDelay: `${idx * 0.1}s` }}
-                    >
-                      <div className="relative h-40 md:h-48 overflow-hidden bg-black/60">
-                        <img
-                          src={diferencial.image}
-                          alt={diferencial.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
-                      </div>
-                      <div className="p-4 md:p-6 bg-black/40 group-hover:bg-black/60 transition-all duration-300">
-                        <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font mb-2">
-                          {diferencial.title}
-                        </h3>
-                        <p className="text-xs md:text-sm text-gray-300 line-clamp-2">
-                          {diferencial.description}
-                        </p>
-                      </div>
+                  <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+                    <div className="space-y-4">
+                      <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                        Somos a <span className="text-[#FF2E4A] font-bold">Banda Projeto X</span>, uma das maiores referências do Brasil em casamentos, formaturas, confraternizações e festas de 15 anos.
+                      </p>
+                      <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                        Vencedores do prêmio de <span className="text-[#FF2E4A] font-bold">Melhor Banda 2023/2024</span>, somos reconhecidos por entregar um espetáculo completo, com energia do começo ao fim, sem pausas.
+                      </p>
                     </div>
-                  ))}
-                </div>
+                    <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border-2 border-[#FF2E4A] neon-border">
+                      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg" alt="Projeto X" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
 
-                <div className="text-center">
-                  <button
-                    onClick={() => setActiveTab('diferenciais')}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
-                  >
-                    Ver Todos os Diferenciais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </section>
-
-              {/* Preview: Vídeos */}
-              <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                    MELHORES MOMENTOS
-                  </h2>
-                  <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
-                  {videos.slice(0, 3).map((video, idx) => (
-                    <div
-                      key={video.id}
-                      className="group cursor-pointer fade-in-up"
-                      style={{ animationDelay: `${idx * 0.1}s` }}
+                  <div className="text-center">
+                    <button
+                      onClick={() => setActiveTab('sobre')}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
                     >
-                      <div className="relative overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover">
-                        <img
-                          src={video.thumbnail}
-                          alt={video.title}
-                          className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                          <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
+                      Ver Mais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </section>
+
+                {/* Preview: Diferenciais */}
+                <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
+                  <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                      NOSSOS DIFERENCIAIS
+                    </h2>
+                    <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
+                    {diferenciais.slice(0, 2).map((diferencial, idx) => (
+                      <div
+                        key={idx}
+                        className="group fade-in-up overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover"
+                        style={{ animationDelay: `${idx * 0.1}s` }}
+                      >
+                        <div className="relative h-40 md:h-48 overflow-hidden bg-black/60">
+                          <img
+                            src={diferencial.image}
+                            alt={diferencial.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="p-4 md:p-6 bg-black/40 group-hover:bg-black/60 transition-all duration-300">
+                          <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font mb-2">
+                            {diferencial.title}
+                          </h3>
+                          <p className="text-xs md:text-sm text-gray-300 line-clamp-2">
+                            {diferencial.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-center">
+                    <button
+                      onClick={() => setActiveTab('diferenciais')}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                    >
+                      Ver Todos os Diferenciais <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </section>
+
+                {/* Preview: Vídeos */}
+                <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
+                  <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                      MELHORES MOMENTOS
+                    </h2>
+                    <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
+                    {videos.slice(0, 3).map((video, idx) => (
+                      <div
+                        key={video.id}
+                        className="group cursor-pointer fade-in-up"
+                        style={{ animationDelay: `${idx * 0.1}s` }}
+                      >
+                        <div className="relative overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover">
+                          <img
+                            src={video.thumbnail}
+                            alt={video.title}
+                            className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-300"
+                          />
+                          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                              <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
+                            </div>
                           </div>
                         </div>
+                        <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
+                          {video.title}
+                        </h3>
                       </div>
-                      <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
-                        {video.title}
-                      </h3>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                <div className="text-center">
-                  <button
-                    onClick={() => setActiveTab('videos')}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
-                  >
-                    Ver Todos os Vídeos <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </section>
-
-              {/* Preview: Próximos Shows */}
-              <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                    PRÓXIMOS SHOWS
-                  </h2>
-                  <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-                </div>
-
-                <div className="space-y-4 mb-8">
-                  {upcomingShows.slice(0, 2).map((show) => (
-                    <div
-                      key={show.id}
-                      className="p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover fade-in-up"
+                  <div className="text-center">
+                    <button
+                      onClick={() => setActiveTab('videos')}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
                     >
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div>
-                          <p className="text-[#FF2E4A] font-bold text-sm md:text-base">
-                            {show.day}, {new Date(show.date).toLocaleDateString('pt-BR')} às {show.time}
-                          </p>
-                          <h3 className="text-lg md:text-xl font-bold text-white mt-1">
-                            {show.event}
-                          </h3>
-                          <p className="text-gray-400 text-sm md:text-base mt-1">
-                            {show.location} • {show.city}
-                          </p>
+                      Ver Todos os Vídeos <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </section>
+
+                {/* Preview: Próximos Shows */}
+                <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
+                  <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                      PRÓXIMOS SHOWS
+                    </h2>
+                    <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+                  </div>
+
+                  <div className="space-y-4 mb-8">
+                    {upcomingShows.slice(0, 2).map((show) => (
+                      <div
+                        key={show.id}
+                        className="p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover fade-in-up"
+                      >
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                          <div>
+                            <p className="text-[#FF2E4A] font-bold text-sm md:text-base">
+                              {show.day}, {new Date(show.date).toLocaleDateString('pt-BR')} às {show.time}
+                            </p>
+                            <h3 className="text-lg md:text-xl font-bold text-white mt-1">
+                              {show.event}
+                            </h3>
+                            <p className="text-gray-400 text-sm md:text-base mt-1">
+                              {show.location} • {show.city}
+                            </p>
+                          </div>
+                          <span className="inline-block px-3 py-1 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] text-xs md:text-sm font-bold rounded">
+                            {show.status}
+                          </span>
                         </div>
-                        <span className="inline-block px-3 py-1 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] text-xs md:text-sm font-bold rounded">
-                          {show.status}
-                        </span>
                       </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                <div className="text-center">
-                  <button
-                    onClick={() => setActiveTab('shows')}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                  <div className="text-center">
+                    <button
+                      onClick={() => setActiveTab('shows')}
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF2E4A] text-white font-bold rounded hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
+                    >
+                      Ver Todos os Shows <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </section>
+
+                {/* CTA Final */}
+                <section className="text-center py-12">
+                  <h2 className="text-3xl md:text-4xl font-bold display-font text-white mb-6 glow-text">
+                    Pronto para o Espetáculo?
+                  </h2>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF2E4A] text-white font-bold rounded text-lg hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
                   >
-                    Ver Todos os Shows <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </section>
-
-              {/* CTA Final */}
-              <section className="text-center py-12">
-                <h2 className="text-3xl md:text-4xl font-bold display-font text-white mb-6 glow-text">
-                  Pronto para o Espetáculo?
-                </h2>
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF2E4A] text-white font-bold rounded text-lg hover:bg-[#FF2E4A]/80 transition-all duration-300 text-glow group"
-                >
-                  CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </section>
+                    CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </section>
+              </div>
             </div>
-          )}
+          </section>
+        </div>
+      )}
 
-          {/* SOBRE Tab */}
-          {activeTab === 'sobre' && (
+      {/* SOBRE Tab */}
+      {activeTab === 'sobre' && (
+        <section className="pt-24 pb-20 px-4">
+          <div className="container mx-auto">
             <div className="fade-in-up space-y-12">
-              <div className="text-center mb-12 pt-12">
+              <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
                   O PROJETO X
                 </h2>
@@ -471,10 +480,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          )}
+          </div>
+        </section>
+      )}
 
-          {/* DIFERENCIAIS Tab */}
-          {activeTab === 'diferenciais' && (
+      {/* DIFERENCIAIS Tab */}
+      {activeTab === 'diferenciais' && (
+        <section className="pt-24 pb-20 px-4">
+          <div className="container mx-auto">
             <div className="fade-in-up space-y-12">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
@@ -490,7 +503,6 @@ export default function Home() {
                     className="group fade-in-up overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover"
                     style={{ animationDelay: `${idx * 0.1}s` }}
                   >
-                    {/* Image Section */}
                     <div className="relative h-56 md:h-64 overflow-hidden bg-black/60">
                       <img
                         src={diferencial.image}
@@ -500,7 +512,6 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
 
-                    {/* Content Section */}
                     <div className="p-4 md:p-6 bg-black/40 group-hover:bg-black/60 transition-all duration-300">
                       <div className="flex items-start gap-3 mb-3">
                         <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -518,10 +529,14 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          )}
+          </div>
+        </section>
+      )}
 
-          {/* VÍDEOS Tab */}
-          {activeTab === 'videos' && (
+      {/* VÍDEOS Tab */}
+      {activeTab === 'videos' && (
+        <section className="pt-24 pb-20 px-4">
+          <div className="container mx-auto">
             <div className="fade-in-up space-y-12">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
@@ -583,10 +598,14 @@ export default function Home() {
                 </div>
               )}
             </div>
-          )}
+          </div>
+        </section>
+      )}
 
-          {/* PRÓXIMOS SHOWS Tab */}
-          {activeTab === 'shows' && (
+      {/* PRÓXIMOS SHOWS Tab */}
+      {activeTab === 'shows' && (
+        <section className="pt-24 pb-20 px-4">
+          <div className="container mx-auto">
             <div className="fade-in-up space-y-12">
               <div className="text-center mb-12">
                 <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
@@ -635,9 +654,9 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* Floating WhatsApp Button with 3D Flip */}
       <a
