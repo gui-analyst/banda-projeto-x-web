@@ -434,13 +434,13 @@ export default function Home() {
         </div>
       )}
 
-      {/* SOBRE Tab */}
+      {/* SOBRE Tab - PRETO */}
       {activeTab === 'sobre' && (
-        <section className="pt-24 pb-20 px-4">
+        <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] pt-24 pb-20 px-4" style={{ backgroundColor: '#000000' }}>
           <div className="container mx-auto">
             <div className="fade-in-up space-y-12">
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
                   O PROJETO X
                 </h2>
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
@@ -450,29 +450,29 @@ export default function Home() {
                 {stats.map((stat, idx) => (
                   <div
                     key={idx}
-                    className="group p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover text-center overflow-hidden fade-in-up"
+                    className="group p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/50 bg-black/20 hover:border-[#FF2E4A] hover:bg-black/40 transition-all duration-300 text-center overflow-hidden fade-in-up"
                     style={{ animationDelay: `${idx * 0.1}s` }}
                   >
                     <div className="text-xl md:text-3xl font-bold text-[#FF2E4A] mb-1 md:mb-2 display-font group-hover:scale-110 transition-transform duration-300 break-words">
                       {stat.number}
                     </div>
-                    <p className="text-xs md:text-sm text-gray-300 leading-tight">{stat.label}</p>
+                    <p className="text-xs md:text-sm text-white leading-tight">{stat.label}</p>
                   </div>
                 ))}
               </div>
 
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="space-y-6 order-2 md:order-1">
-                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base md:text-lg text-white leading-relaxed">
                     Somos a <span className="text-[#FF2E4A] font-bold">Banda Projeto X</span>, uma das maiores referências do Brasil em casamentos, formaturas, confraternizações e festas de 15 anos.
                   </p>
-                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base md:text-lg text-white leading-relaxed">
                     Vencedores do prêmio de <span className="text-[#FF2E4A] font-bold">Melhor Banda 2023/2024</span>, somos reconhecidos por entregar um espetáculo completo, com energia do começo ao fim, sem pausas.
                   </p>
-                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base md:text-lg text-white leading-relaxed">
                     Muito mais que um show, um verdadeiro "espetáculo" - uma banda que eternaliza todos os momentos e realiza o sonho junto com vocês, misturando todos os estilos musicais e levando alegria por onde passa.
                   </p>
-                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                  <p className="text-base md:text-lg text-white leading-relaxed">
                     Um repertório eclético e super animado com números e brincadeiras que não deixam ninguém parado.
                   </p>
                 </div>
@@ -490,13 +490,13 @@ export default function Home() {
         </section>
       )}
 
-      {/* DIFERENCIAIS Tab */}
+      {/* DIFERENCIAIS Tab - BRANCO */}
       {activeTab === 'diferenciais' && (
-        <section className="pt-24 pb-20 px-4">
+        <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] pt-24 pb-20 px-4" style={{ backgroundColor: '#FFFFFF' }}>
           <div className="container mx-auto">
             <div className="fade-in-up space-y-12">
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                <h2 className="text-4xl md:text-5xl font-bold display-font text-black mb-4" style={{ textShadow: 'none' }}>
                   NOSSOS DIFERENCIAIS
                 </h2>
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
@@ -518,7 +518,7 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
 
-                    <div className="p-4 md:p-6 bg-black/40 group-hover:bg-black/60 transition-all duration-300">
+                    <div className="p-4 md:p-6 bg-white group-hover:bg-gray-100 transition-all duration-300">
                       <div className="flex items-start gap-3 mb-3">
                         <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                           <CyberpunkIcon name={diferencial.icon as any} className="w-10 h-10 md:w-12 md:h-12" />
@@ -527,7 +527,7 @@ export default function Home() {
                           {diferencial.title}
                         </h3>
                       </div>
-                      <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
+                      <p className="text-xs md:text-sm text-black leading-relaxed">
                         {diferencial.description}
                       </p>
                     </div>
@@ -539,16 +539,16 @@ export default function Home() {
         </section>
       )}
 
-      {/* VÍDEOS Tab */}
+      {/* Vídeos Tab - VERMELHO */}
       {activeTab === 'videos' && (
-        <section className="pt-24 pb-20 px-4">
+        <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] pt-24 pb-20 px-4" style={{ backgroundColor: '#FF2E4A' }}>
           <div className="container mx-auto">
             <div className="fade-in-up space-y-12">
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
                   MELHORES MOMENTOS
                 </h2>
-                <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
+                <div className="w-24 h-1 bg-white mx-auto rounded" />
               </div>
 
               <div className="grid md:grid-cols-3 gap-4 md:gap-6">
@@ -559,22 +559,22 @@ export default function Home() {
                     className="group cursor-pointer fade-in-up"
                     style={{ animationDelay: `${idx * 0.1}s` }}
                   >
-                    <div className="relative overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover">
+                    <div className="relative overflow-hidden rounded-lg border-2 border-white/30 hover:border-white transition-all duration-300">
                       <img
                         src={video.thumbnail}
                         alt={video.title}
                         className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-300"
                         style={{
-                          boxShadow: selectedVideo === video.id ? '0 0 30px rgba(255, 46, 74, 0.8)' : 'none',
+                          boxShadow: selectedVideo === video.id ? '0 0 30px rgba(255, 255, 255, 0.8)' : 'none',
                         }}
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                        <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
+                        <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Play className="w-6 md:w-8 h-6 md:h-8 text-white fill-current" />
                         </div>
                       </div>
                     </div>
-                    <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
+                    <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-black transition-colors line-clamp-2">
                       {video.title}
                     </h3>
                   </div>
@@ -608,13 +608,13 @@ export default function Home() {
         </section>
       )}
 
-      {/* PRÓXIMOS SHOWS Tab */}
+      {/* PRÓXIMOS SHOWS Tab - PRETO */}
       {activeTab === 'shows' && (
-        <section className="pt-24 pb-20 px-4">
+        <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] pt-24 pb-20 px-4" style={{ backgroundColor: '#000000' }}>
           <div className="container mx-auto">
             <div className="fade-in-up space-y-12">
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
                   PRÓXIMOS SHOWS
                 </h2>
                 <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
