@@ -236,170 +236,179 @@ export default function Home() {
             <div className="container mx-auto">
               <div className="space-y-20">
                 {/* Preview: Projeto X */}
-                <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
-                  <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                      O PROJETO X
-                    </h2>
-                    <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-                    <div className="space-y-4">
-                      <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                        Somos a <span className="text-[#FF2E4A] font-bold">Banda Projeto X</span>, uma das maiores referências do Brasil em casamentos, formaturas, confraternizações e festas de 15 anos.
-                      </p>
-                      <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                        Vencedores do prêmio de <span className="text-[#FF2E4A] font-bold">Melhor Banda 2023/2024</span>, somos reconhecidos por entregar um espetáculo completo, com energia do começo ao fim, sem pausas.
-                      </p>
+                <section className="py-20 px-6 md:px-12 fade-in-up bg-black/30 rounded-xl border border-[#FF2E4A]/20">
+                  <div className="flex flex-col md:flex-row gap-12 items-center">
+                    <div className="flex-1 space-y-6">
+                      <div>
+                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                          O PROJETO X
+                        </h2>
+                        <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
+                      </div>
+                      <div className="space-y-4">
+                        <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                          Somos a <span className="text-[#FF2E4A] font-bold">Banda Projeto X</span>, uma das maiores referências do Brasil em casamentos, formaturas, confraternizações e festas de 15 anos.
+                        </p>
+                        <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                          Vencedores do prêmio de <span className="text-[#FF2E4A] font-bold">Melhor Banda 2023/2024</span>, somos reconhecidos por entregar um espetáculo completo, com energia do começo ao fim, sem pausas.
+                        </p>
+                      </div>
                     </div>
-                    <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border-2 border-[#FF2E4A] neon-border">
-                      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg" alt="Projeto X" className="w-full h-full object-cover" />
+                    <div className="flex-1 flex flex-col items-end gap-8">
+                      <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden border-2 border-[#FF2E4A]/50 hover:border-[#FF2E4A] transition-all duration-300 neon-border">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg" alt="Projeto X" className="w-full h-full object-cover" />
+                      </div>
+                      <button
+                        onClick={() => setActiveTab('sobre')}
+                        className="px-4 py-2 rounded-lg border border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300"
+                      >
+                        VER MAIS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
                     </div>
-                  </div>
-
-                  <div className="text-center">
-                    <button
-                      onClick={() => setActiveTab('sobre')}
-                      className="btn-primary inline-flex items-center gap-2 group"
-                    >
-                      VER MAIS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
                   </div>
                 </section>
 
                 {/* Preview: Diferenciais */}
-                <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
-                  <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                      NOSSOS DIFERENCIAIS
-                    </h2>
-                    <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8">
-                    {diferenciais.slice(0, 2).map((diferencial, idx) => (
-                      <div
-                        key={idx}
-                        className="group fade-in-up overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover"
-                        style={{ animationDelay: `${idx * 0.1}s` }}
-                      >
-                        <div className="relative h-40 md:h-48 overflow-hidden bg-black/60">
-                          <img
-                            src={diferencial.image}
-                            alt={diferencial.title}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                          />
-                        </div>
-                        <div className="p-4 md:p-6 bg-black/40 group-hover:bg-black/60 transition-all duration-300">
-                          <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font mb-2">
-                            {diferencial.title}
-                          </h3>
-                          <p className="text-xs md:text-sm text-gray-300 line-clamp-2">
-                            {diferencial.description}
-                          </p>
-                        </div>
+                <section className="py-20 px-6 md:px-12 fade-in-up bg-black/50 rounded-xl border border-[#FF2E4A]/20">
+                  <div className="flex flex-col md:flex-row gap-12 items-start">
+                    <div className="flex-1">
+                      <div className="mb-8">
+                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                          NOSSOS DIFERENCIAIS
+                        </h2>
+                        <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
                       </div>
-                    ))}
-                  </div>
 
-                  <div className="text-center">
-                    <button
-                      onClick={() => setActiveTab('diferenciais')}
-                      className="btn-primary inline-flex items-center gap-2 group"
-                    >
-                      VER TODOS OS DIFERENCIAIS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                        {diferenciais.slice(0, 2).map((diferencial, idx) => (
+                          <div
+                            key={idx}
+                            className="group fade-in-up overflow-hidden rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300"
+                            style={{ animationDelay: `${idx * 0.1}s` }}
+                          >
+                            <div className="relative h-40 md:h-48 overflow-hidden bg-black/60">
+                              <img
+                                src={diferencial.image}
+                                alt={diferencial.title}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                              />
+                            </div>
+                            <div className="p-4 md:p-6 bg-black/20 group-hover:bg-black/40 transition-all duration-300">
+                              <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font mb-2">
+                                {diferencial.title}
+                              </h3>
+                              <p className="text-xs md:text-sm text-gray-300 line-clamp-2">
+                                {diferencial.description}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 md:pt-16">
+                      <button
+                        onClick={() => setActiveTab('diferenciais')}
+                        className="px-4 py-2 rounded-lg border border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
+                      >
+                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
                   </div>
                 </section>
 
                 {/* Preview: Vídeos */}
-                <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
-                  <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                      MELHORES MOMENTOS
-                    </h2>
-                    <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8">
-                    {videos.slice(0, 3).map((video, idx) => (
-                      <div
-                        key={video.id}
-                        className="group cursor-pointer fade-in-up"
-                        style={{ animationDelay: `${idx * 0.1}s` }}
-                      >
-                        <div className="relative overflow-hidden rounded-lg border-2 border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 neon-border-hover">
-                          <img
-                            src={video.thumbnail}
-                            alt={video.title}
-                            className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-300"
-                          />
-                          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                            <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                              <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
-                            </div>
-                          </div>
-                        </div>
-                        <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
-                          {video.title}
-                        </h3>
+                <section className="py-20 px-6 md:px-12 fade-in-up bg-black/30 rounded-xl border border-[#FF2E4A]/20">
+                  <div className="flex flex-col md:flex-row gap-12 items-start">
+                    <div className="flex-1">
+                      <div className="mb-8">
+                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                          MELHORES MOMENTOS
+                        </h2>
+                        <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
                       </div>
-                    ))}
-                  </div>
 
-                  <div className="text-center">
-                    <button
-                      onClick={() => setActiveTab('videos')}
-                      className="btn-primary inline-flex items-center gap-2 group"
-                    >
-                      VER TODOS OS VÍDEOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                      <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+                        {videos.slice(0, 3).map((video, idx) => (
+                          <div
+                            key={video.id}
+                            className="group cursor-pointer fade-in-up"
+                            style={{ animationDelay: `${idx * 0.1}s` }}
+                          >
+                            <div className="relative overflow-hidden rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300">
+                              <img
+                                src={video.thumbnail}
+                                alt={video.title}
+                                className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-300"
+                              />
+                              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                                <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                  <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
+                                </div>
+                              </div>
+                            </div>
+                            <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
+                              {video.title}
+                            </h3>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 md:pt-16">
+                      <button
+                        onClick={() => setActiveTab('videos')}
+                        className="px-4 py-2 rounded-lg border border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
+                      >
+                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
                   </div>
                 </section>
 
                 {/* Preview: Próximos Shows */}
-                <section className="py-20 px-6 md:px-12 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 neon-border hover:shadow-2xl transition-all duration-300 fade-in-up" style={{ boxShadow: '0 0 20px rgba(255, 46, 74, 0.3)' }}>
-                  <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                      PRÓXIMOS SHOWS
-                    </h2>
-                    <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-                  </div>
-
-                  <div className="space-y-4 mb-8">
-                    {upcomingShows.slice(0, 2).map((show) => (
-                      <div
-                        key={show.id}
-                        className="p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover fade-in-up"
-                      >
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                          <div>
-                            <p className="text-[#FF2E4A] font-bold text-sm md:text-base">
-                              {show.day}, {new Date(show.date).toLocaleDateString('pt-BR')} às {show.time}
-                            </p>
-                            <h3 className="text-lg md:text-xl font-bold text-white mt-1">
-                              {show.event}
-                            </h3>
-                            <p className="text-gray-400 text-sm md:text-base mt-1">
-                              {show.location} • {show.city}
-                            </p>
-                          </div>
-                          <span className="inline-block px-3 py-1 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] text-xs md:text-sm font-bold rounded">
-                            {show.status}
-                          </span>
-                        </div>
+                <section className="py-20 px-6 md:px-12 fade-in-up bg-black/50 rounded-xl border border-[#FF2E4A]/20">
+                  <div className="flex flex-col md:flex-row gap-12 items-start">
+                    <div className="flex-1">
+                      <div className="mb-8">
+                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                          PRÓXIMOS SHOWS
+                        </h2>
+                        <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
                       </div>
-                    ))}
-                  </div>
 
-                  <div className="text-center">
-                    <button
-                      onClick={() => setActiveTab('shows')}
-                      className="btn-primary inline-flex items-center gap-2 group"
-                    >
-                      VER TODOS OS SHOWS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+                      <div className="space-y-4">
+                        {upcomingShows.slice(0, 2).map((show) => (
+                          <div
+                            key={show.id}
+                            className="p-4 md:p-6 rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] hover:bg-black/40 transition-all duration-300 fade-in-up"
+                          >
+                            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                              <div>
+                                <p className="text-[#FF2E4A] font-bold text-sm md:text-base">
+                                  {show.day}, {new Date(show.date).toLocaleDateString('pt-BR')} às {show.time}
+                                </p>
+                                <h3 className="text-lg md:text-xl font-bold text-white mt-1">
+                                  {show.event}
+                                </h3>
+                                <p className="text-gray-400 text-sm md:text-base mt-1">
+                                  {show.location} • {show.city}
+                                </p>
+                              </div>
+                              <span className="inline-block px-3 py-1 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] text-xs md:text-sm font-bold rounded">
+                                {show.status}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 md:pt-16">
+                      <button
+                        onClick={() => setActiveTab('shows')}
+                        className="px-4 py-2 rounded-lg border border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
+                      >
+                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
                   </div>
                 </section>
 
