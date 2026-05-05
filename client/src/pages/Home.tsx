@@ -232,8 +232,8 @@ export default function Home() {
           </section>
 
           {/* Main Content Container - Full Screen Sections */}
-          {/* Preview: Projeto X */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%)' }}>
+          {/* Preview: Projeto X - PRETO */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#000000' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1 space-y-6">
@@ -244,10 +244,10 @@ export default function Home() {
                         <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
                       </div>
                       <div className="space-y-4">
-                        <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                        <p className="text-base md:text-lg text-white leading-relaxed">
                           Somos a <span className="text-[#FF2E4A] font-bold">Banda Projeto X</span>, uma das maiores referências do Brasil em casamentos, formaturas, confraternizações e festas de 15 anos.
                         </p>
-                        <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+                        <p className="text-base md:text-lg text-white leading-relaxed">
                           Vencedores do prêmio de <span className="text-[#FF2E4A] font-bold">Melhor Banda 2023/2024</span>, somos reconhecidos por entregar um espetáculo completo, com energia do começo ao fim, sem pausas.
                         </p>
                       </div>
@@ -267,13 +267,13 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Preview: Diferenciais */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ background: 'linear-gradient(135deg, #1a0a0a 0%, #2a1a1a 50%, #1a0f0f 100%)' }}>
+          {/* Preview: Diferenciais - BRANCO */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#FFFFFF' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
                       <div className="mb-8">
-                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                        <h2 className="text-4xl md:text-5xl font-bold display-font text-black mb-4" style={{ textShadow: 'none' }}>
                           NOSSOS DIFERENCIAIS
                         </h2>
                         <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
@@ -293,11 +293,11 @@ export default function Home() {
                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                               />
                             </div>
-                            <div className="p-4 md:p-6 bg-black/20 group-hover:bg-black/40 transition-all duration-300">
+                            <div className="p-4 md:p-6 bg-white group-hover:bg-gray-100 transition-all duration-300">
                               <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font mb-2">
                                 {diferencial.title}
                               </h3>
-                              <p className="text-xs md:text-sm text-gray-300 line-clamp-2">
+                              <p className="text-xs md:text-sm text-black line-clamp-2">
                                 {diferencial.description}
                               </p>
                             </div>
@@ -308,7 +308,7 @@ export default function Home() {
                     <div className="flex-shrink-0 md:pt-16">
                       <button
                         onClick={() => setActiveTab('diferenciais')}
-                        className="px-4 py-2 rounded-lg border border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
+                        className="px-4 py-2 rounded-lg border border-black text-black hover:bg-black hover:text-white font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
                       >
                         VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </button>
@@ -317,16 +317,16 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Preview: Vídeos */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%)' }}>
+          {/* Preview: Vídeos - VERMELHO */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#FF2E4A' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
                       <div className="mb-8">
-                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
                           MELHORES MOMENTOS
                         </h2>
-                        <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
+                        <div className="w-24 h-1 bg-white rounded" />
                       </div>
 
                       <div className="grid md:grid-cols-3 gap-4 md:gap-6">
@@ -348,7 +348,7 @@ export default function Home() {
                                 </div>
                               </div>
                             </div>
-                            <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-[#FF2E4A] transition-colors line-clamp-2">
+                            <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-black transition-colors line-clamp-2">
                               {video.title}
                             </h3>
                           </div>
@@ -358,7 +358,7 @@ export default function Home() {
                     <div className="flex-shrink-0 md:pt-16">
                       <button
                         onClick={() => setActiveTab('videos')}
-                        className="px-4 py-2 rounded-lg border border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
+                        className="px-4 py-2 rounded-lg border border-white text-white hover:bg-white hover:text-[#FF2E4A] font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
                       >
                         VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </button>
@@ -367,13 +367,13 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Preview: Próximos Shows */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ background: 'linear-gradient(135deg, #1a0a0a 0%, #2a1a1a 50%, #1a0f0f 100%)' }}>
+          {/* Preview: Próximos Shows - PRETO */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#000000' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
                       <div className="mb-8">
-                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
                           PRÓXIMOS SHOWS
                         </h2>
                         <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
@@ -383,7 +383,7 @@ export default function Home() {
                         {upcomingShows.slice(0, 2).map((show) => (
                           <div
                             key={show.id}
-                            className="p-4 md:p-6 rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] hover:bg-black/40 transition-all duration-300 fade-in-up"
+                            className="p-4 md:p-6 rounded-lg border border-[#FF2E4A]/50 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 fade-in-up"
                           >
                             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                               <div>
@@ -393,7 +393,7 @@ export default function Home() {
                                 <h3 className="text-lg md:text-xl font-bold text-white mt-1">
                                   {show.event}
                                 </h3>
-                                <p className="text-gray-400 text-sm md:text-base mt-1">
+                                <p className="text-gray-300 text-sm md:text-base mt-1">
                                   {show.location} • {show.city}
                                 </p>
                               </div>
@@ -417,10 +417,10 @@ export default function Home() {
             </div>
           </section>
 
-          {/* CTA Final */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] text-center py-16" style={{ background: 'linear-gradient(135deg, #0f0a0a 0%, #1f1a1a 50%, #0a0a0a 100%)' }}>
+          {/* CTA Final - BRANCO */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] text-center py-16" style={{ backgroundColor: '#FFFFFF' }}>
             <div className="container mx-auto">
-                  <h2 className="text-3xl md:text-4xl font-bold display-font text-white mb-6 glow-text">
+                  <h2 className="text-3xl md:text-4xl font-bold display-font text-black mb-6" style={{ textShadow: 'none' }}>
                     Pronto para o Espetáculo?
                   </h2>
                   <button
