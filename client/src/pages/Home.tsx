@@ -233,7 +233,7 @@ export default function Home() {
 
           {/* Main Content Container - Full Screen Sections */}
           {/* Preview: Projeto X */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up bg-black/20">
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%)' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1 space-y-6">
@@ -268,7 +268,7 @@ export default function Home() {
           </section>
 
           {/* Preview: Diferenciais */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up bg-black/40">
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ background: 'linear-gradient(135deg, #1a0a0a 0%, #2a1a1a 50%, #1a0f0f 100%)' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
@@ -318,7 +318,7 @@ export default function Home() {
           </section>
 
           {/* Preview: Vídeos */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up bg-black/20">
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%)' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
@@ -368,7 +368,7 @@ export default function Home() {
           </section>
 
           {/* Preview: Próximos Shows */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up bg-black/40">
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ background: 'linear-gradient(135deg, #1a0a0a 0%, #2a1a1a 50%, #1a0f0f 100%)' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
@@ -418,7 +418,7 @@ export default function Home() {
           </section>
 
           {/* CTA Final */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] text-center py-16 bg-black/30">
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] text-center py-16" style={{ background: 'linear-gradient(135deg, #0f0a0a 0%, #1f1a1a 50%, #0a0a0a 100%)' }}>
             <div className="container mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold display-font text-white mb-6 glow-text">
                     Pronto para o Espetáculo?
