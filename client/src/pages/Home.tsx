@@ -231,12 +231,10 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Main Content Container */}
-          <section className="pt-20 pb-20 px-4">
+          {/* Main Content Container - Full Screen Sections */}
+          {/* Preview: Projeto X */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up bg-black/20">
             <div className="container mx-auto">
-              <div className="space-y-20">
-                {/* Preview: Projeto X */}
-                <section className="py-20 px-6 md:px-12 fade-in-up bg-black/30 rounded-xl border border-[#FF2E4A]/20">
                   <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="flex-1 space-y-6">
                       <div>
@@ -266,10 +264,12 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
-                </section>
+            </div>
+          </section>
 
-                {/* Preview: Diferenciais */}
-                <section className="py-20 px-6 md:px-12 fade-in-up bg-black/50 rounded-xl border border-[#FF2E4A]/20">
+          {/* Preview: Diferenciais */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up bg-black/40">
+            <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
                       <div className="mb-8">
@@ -314,10 +314,12 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
-                </section>
+            </div>
+          </section>
 
-                {/* Preview: Vídeos */}
-                <section className="py-20 px-6 md:px-12 fade-in-up bg-black/30 rounded-xl border border-[#FF2E4A]/20">
+          {/* Preview: Vídeos */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up bg-black/20">
+            <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
                       <div className="mb-8">
@@ -362,10 +364,12 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
-                </section>
+            </div>
+          </section>
 
-                {/* Preview: Próximos Shows */}
-                <section className="py-20 px-6 md:px-12 fade-in-up bg-black/50 rounded-xl border border-[#FF2E4A]/20">
+          {/* Preview: Próximos Shows */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up bg-black/40">
+            <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1">
                       <div className="mb-8">
@@ -410,10 +414,12 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
-                </section>
+            </div>
+          </section>
 
-                {/* CTA Final */}
-                <section className="text-center py-12">
+          {/* CTA Final */}
+          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] text-center py-16 bg-black/30">
+            <div className="container mx-auto">
                   <h2 className="text-3xl md:text-4xl font-bold display-font text-white mb-6 glow-text">
                     Pronto para o Espetáculo?
                   </h2>
@@ -423,8 +429,6 @@ export default function Home() {
                   >
                     CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
-                </section>
-              </div>
             </div>
           </section>
         </div>
