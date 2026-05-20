@@ -267,9 +267,9 @@ export default function Home() {
                       </div>
                       <button
                         onClick={() => setActiveTab('sobre')}
-                        className="px-4 py-2 rounded-lg border border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300"
+                        className="px-6 py-3 rounded-xl border-2 border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-3 group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95"
                       >
-                        VER MAIS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        VER MAIS <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300" />
                       </button>
                     </div>
                   </div>
@@ -317,9 +317,9 @@ export default function Home() {
                     <div className="flex-shrink-0 md:pt-16">
                       <button
                         onClick={() => setActiveTab('diferenciais')}
-                        className="px-4 py-2 rounded-lg border border-black text-black hover:bg-black hover:text-white font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
+                        className="px-6 py-3 rounded-xl border-2 border-black text-black hover:bg-black hover:text-white font-bold display-font text-sm md:text-base inline-flex items-center gap-3 group transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:-translate-y-1 active:scale-95"
                       >
-                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        VER TODOS <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300" />
                       </button>
                     </div>
                   </div>
@@ -370,9 +370,9 @@ export default function Home() {
                     <div className="flex-shrink-0 md:pt-16">
                       <button
                         onClick={() => setActiveTab('videos')}
-                        className="px-4 py-2 rounded-lg border border-white text-white hover:bg-white hover:text-[#FF2E4A] font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
+                        className="px-6 py-3 rounded-xl border-2 border-white text-white hover:bg-white hover:text-[#FF2E4A] font-bold display-font text-sm md:text-base inline-flex items-center gap-3 group transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:-translate-y-1 active:scale-95"
                       >
-                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        VER TODOS <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300" />
                       </button>
                     </div>
                   </div>
@@ -412,9 +412,9 @@ export default function Home() {
                   </h2>
                   <button
                     onClick={() => window.open(whatsappUrl, '_blank')}
-                    className="btn-primary inline-flex items-center gap-2 group text-lg"
+                    className="btn-primary inline-flex items-center gap-3 group text-lg px-8 py-4 rounded-xl hover:shadow-2xl hover:-translate-y-1 active:scale-95 transition-all duration-300"
                   >
-                    CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    CONTRATAR AGORA <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-all duration-300" />
                   </button>
             </div>
           </section>
