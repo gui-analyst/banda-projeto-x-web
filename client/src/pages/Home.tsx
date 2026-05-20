@@ -246,18 +246,18 @@ export default function Home() {
             <div className="container mx-auto">
                   <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1 space-y-6">
-                      <div className="flex items-start justify-between gap-8">
-                        <div>
-                          <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-8">
+                        <div className="flex-1">
+                          <h2 className="text-2xl md:text-5xl font-bold display-font text-white mb-4 glow-text leading-tight">
                             O PROJETO X
                           </h2>
                           <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
                         </div>
                         <button
                           onClick={() => setActiveTab('sobre')}
-                          className="text-white hover:text-[#FF2E4A] font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-[#FF2E4A] pb-1"
+                          className="text-white hover:text-[#FF2E4A] font-bold display-font text-xs md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-[#FF2E4A] pb-1 md:mt-0 mt-2"
                         >
-                          VER MAIS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all duration-300" />
+                          VER MAIS <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-all duration-300" />
                         </button>
                       </div>
                       <div className="space-y-4">
@@ -282,18 +282,18 @@ export default function Home() {
           <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#FFFFFF' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col gap-8">
-                    <div className="flex items-start justify-between gap-8">
-                      <div>
-                        <h2 className="text-4xl md:text-5xl font-bold display-font text-black mb-4" style={{ textShadow: 'none' }}>
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-8">
+                      <div className="flex-1">
+                        <h2 className="text-2xl md:text-5xl font-bold display-font text-black mb-4 leading-tight" style={{ textShadow: 'none' }}>
                           NOSSOS DIFERENCIAIS
                         </h2>
                         <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
                       </div>
                       <button
                         onClick={() => setActiveTab('diferenciais')}
-                        className="text-black hover:text-[#FF2E4A] font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-[#FF2E4A] pb-1"
+                        className="text-black hover:text-[#FF2E4A] font-bold display-font text-xs md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-[#FF2E4A] pb-1 md:mt-0 mt-2"
                       >
-                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all duration-300" />
+                        VER TODOS <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-all duration-300" />
                       </button>
                     </div>
 
@@ -330,18 +330,18 @@ export default function Home() {
           <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#FF2E4A' }}>
             <div className="container mx-auto">
                   <div className="flex flex-col gap-8">
-                    <div className="flex items-start justify-between gap-8">
-                      <div>
-                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-8">
+                      <div className="flex-1">
+                        <h2 className="text-2xl md:text-5xl font-bold display-font text-white mb-4 leading-tight" style={{ textShadow: 'none' }}>
                           MELHORES MOMENTOS
                         </h2>
                         <div className="w-24 h-1 bg-white rounded" />
                       </div>
                       <button
                         onClick={() => setActiveTab('videos')}
-                        className="text-white hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-black pb-1"
+                        className="text-white hover:text-black font-bold display-font text-xs md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-black pb-1 md:mt-0 mt-2"
                       >
-                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all duration-300" />
+                        VER TODOS <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-all duration-300" />
                       </button>
                     </div>
 

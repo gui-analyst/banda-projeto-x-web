@@ -20,7 +20,7 @@ export default function MobileMenu({ tabs, activeTab, onTabChange }: MobileMenuP
       {/* Hamburger Button - Minimalist */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden fixed top-6 right-6 z-50 flex flex-col gap-1.5 hover:opacity-80 transition-opacity duration-300"
+        className="md:hidden fixed top-4 right-4 z-50 flex flex-col gap-1.5 hover:opacity-80 transition-opacity duration-300 p-2"
         aria-label="Menu"
       >
         {isOpen ? (
