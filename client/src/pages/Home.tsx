@@ -15,6 +15,10 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]);
+
   const tabs = [
     { id: 'landing', label: 'HOME', icon: Music },
     { id: 'sobre', label: 'PROJETO X', icon: Music },
