@@ -372,6 +372,29 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
+
+                  {/* Video Modal for Landing */}
+                  {selectedVideo && (activeTab === 'landing' || true) && (
+                    <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setSelectedVideo(null)}>
+                      <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden" onClick={(e) => e.stopPropagation()}>
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={videos.find((v) => v.id === selectedVideo)?.embedUrl}
+                          title="Video"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                        <button
+                          onClick={() => setSelectedVideo(null)}
+                          className="absolute top-4 right-4 text-white bg-black/50 hover:bg-black/80 rounded-full p-2 transition-all"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    </div>
+                  )}
             </div>
           </section>
 
