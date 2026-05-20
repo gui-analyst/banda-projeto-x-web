@@ -84,7 +84,7 @@ export default function Home() {
     },
     {
       id: 3,
-      title: 'Banda Projeto X - Surpresa Especial',
+      title: 'PROJETO X - P do Pecado',
       thumbnail: 'https://img.youtube.com/vi/wBx8TFeN7gU/maxresdefault.jpg',
       embedUrl: 'https://www.youtube.com/embed/wBx8TFeN7gU',
     },
