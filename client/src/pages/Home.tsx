@@ -20,7 +20,6 @@ export default function Home() {
     { id: 'sobre', label: 'PROJETO X', icon: Music },
     { id: 'diferenciais', label: 'DIFERENCIAIS', icon: Sparkles },
     { id: 'videos', label: 'VÍDEOS', icon: Play },
-    { id: 'shows', label: 'PRÓXIMOS SHOWS', icon: Calendar },
   ];
 
   const whatsappNumber = '5516992277417';
@@ -614,59 +613,7 @@ export default function Home() {
         </section>
       )}
 
-      {/* PRÓXIMOS SHOWS Tab - PRETO */}
-      {activeTab === 'shows' && (
-        <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] pt-24 pb-20 px-4" style={{ backgroundColor: '#000000' }}>
-          <div className="container mx-auto">
-            <div className="fade-in-up space-y-12">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
-                  PRÓXIMOS SHOWS
-                </h2>
-                <div className="w-24 h-1 bg-[#FF2E4A] mx-auto rounded" />
-              </div>
 
-              <div className="space-y-4">
-                {upcomingShows.map((show) => (
-                  <div
-                    key={show.id}
-                    className="p-4 md:p-6 rounded-lg border-2 border-[#FF2E4A]/30 bg-black/40 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 neon-border-hover fade-in-up"
-                  >
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div>
-                        <p className="text-[#FF2E4A] font-bold text-sm md:text-base">
-                          {show.day}, {new Date(show.date).toLocaleDateString('pt-BR')} às {show.time}
-                        </p>
-                        <h3 className="text-lg md:text-xl font-bold text-white mt-1">
-                          {show.event}
-                        </h3>
-                        <p className="text-gray-400 text-sm md:text-base mt-1">
-                          {show.location} • {show.city}
-                        </p>
-                      </div>
-                      <span className="inline-block px-3 py-1 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] text-xs md:text-sm font-bold rounded">
-                        {show.status}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center mt-12">
-                <p className="text-gray-400 mb-6">
-                  Interessado em contratar a banda para seu evento?
-                </p>
-              <button
-                onClick={() => window.open(whatsappUrl, '_blank')}
-                className="btn-primary inline-flex items-center gap-2 group text-lg"
-              >
-                CONTRATAR AGORA <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Floating WhatsApp Button with 3D Flip */}
       <a

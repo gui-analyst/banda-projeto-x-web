@@ -1,0 +1,37 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu",
+    "access_key_id": "ASIAZV3A2ECZADDCI5LH",
+    "secret_access_key": "hSLb/JI1qoBKFjGJyaSAwAJwa3kjy4g7l4sBMqrI",
+    "session_token": "IQoJb3JpZ2luX2VjEC8aCXVzLWVhc3QtMSJHMEUCIQCBfthVRo4ZawGdkbUOYGDk3F6yz+EFNfxu/CMUrVLnVwIgGMQChx/ye6LTbwSuY4ZMB+dy7DIvIaUkbFRNH/WkisYq/wMI+P//////////ARAEGgw2NjUzODYwOTg4NjYiDONToVZeIYfMl0ve2CrTA+E1EGY3uhVrJ7D4tJ5XzkpsPfIsBqUsjdd3j6Yh9S7XFiMrPFsl/A52YnM7Yc5Js6BjnI/+gtC+0ljBkIxCdfPmV3VfRFXcA1W2Nt20ml30Jcn4MIDjnp/K1hx8m9876bwKru0vle84JLoK9jaWUZ7yizEi/9AwFCmbLrn/JtPfKeZlirgEibJUa216d174pS8g4NVSa9VOMqIMduQ9WL6W6rbWGQ6MzprQjk2KDFnKD0NquzBrSWtkwARF7DuIhmSHdmQwdepWP6eftKVtiim2v5uL23p9W+s0H63RWlvpr1fpppdwDrzAK/DabXeujB26Jun1Evg2QcaDH9OqHjg7I+B/jXBo1suMqz+b2wsO28bC6uKxsaKHZb6Onpy33T70IlQ/NU1j02FikqmqpiZi6anB+VVFRgfKfzHNXRcvxDgDvqtGSTUqREXoi04n9JzlssnqdxqTUEgsRV8V+KryCn3r5NXV+ZReydytaj519gUkNSXjJc0ZAoCrekkF0tYNrxUL6JHbb1n2cEiMM4Xxiy9M1HcowOGfwdhWWmFuW4jMu7DjwP+vZan/YbM4WrtT3LoAKFPjCPkRSX3GcxSi3ccU8+0oktMP0XoCEm2vFeGnMIX3uNAGOp0B9ttcdZsXlKEfGwSSfVu3gHM87VIc+NlGDCq4RZJ6kcgrYnyFSevS4J5blM2o/9zcPMKGTFtg9xjZEnIGJHO3z1JU473uicxLP+0DIwSxSdgBF+Fh2vqaJSy5RIC7kdGrrzD3azN7GK8P5xvcKKDnSkP2M5UXo/rvFOCN9YlofhNsCet6QvkVzzKuqzcFQVTMWKllzoe3N9uGBlR3SA==",
+    "expiration": "2026-05-21T10:53:57.000Z"
+  },
+  "name": "banda-projeto-x-web",
+  "path": "/home/ubuntu/banda-projeto-x-web",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "g3PvCguqaqcvrhCES7AM2C",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "mD2tXzFAEE9LnY9NPJRHrg",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Guilherme Correa",
+    "OWNER_OPEN_ID": "gV3VX5faFaKX8KqVzjz68n",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "713ce21d-f8ef-4644-adee-77914b99c97b",
+    "VITE_APP_ID": "gHaHPi2GjbH7b7LmvcVLLu",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663417961282/orFNjWFrIFkDghCs.png",
+    "VITE_APP_TITLE": "Banda Projeto X - O Espetáculo da Sua Vida",
+    "VITE_FRONTEND_FORGE_API_KEY": "HEHNigo8Qm3H93RR6D5wmt",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
