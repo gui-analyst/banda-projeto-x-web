@@ -72,19 +72,19 @@ export default function Home() {
   const videos = [
     {
       id: 1,
-      title: 'Show Projeto X - Momento Épico',
+      title: 'PROJETO X - Documentário (Gravação Videoclipes)',
       thumbnail: 'https://img.youtube.com/vi/v5TYzZS9Yyc/maxresdefault.jpg',
       embedUrl: 'https://www.youtube.com/embed/v5TYzZS9Yyc',
     },
     {
       id: 2,
-      title: 'Projeto X - Energia Total',
+      title: 'PROJETO X - Baile Funk',
       thumbnail: 'https://img.youtube.com/vi/eIt_3LZOOwU/maxresdefault.jpg',
       embedUrl: 'https://www.youtube.com/embed/eIt_3LZOOwU',
     },
     {
       id: 3,
-      title: 'PROJETO X - P do Pecado',
+      title: 'PROJETO X - P do Pecado / Livin\'La Vida Loca / Quero Chiclete',
       thumbnail: 'https://img.youtube.com/vi/wBx8TFeN7gU/maxresdefault.jpg',
       embedUrl: 'https://www.youtube.com/embed/wBx8TFeN7gU',
     },
