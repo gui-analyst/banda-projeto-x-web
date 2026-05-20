@@ -341,7 +341,10 @@ export default function Home() {
                             className="group cursor-pointer fade-in-up"
                             style={{ animationDelay: `${idx * 0.1}s` }}
                           >
-                            <div className="relative overflow-hidden rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300">
+                            <button
+                              onClick={() => setSelectedVideo(video.id)}
+                              className="w-full relative overflow-hidden rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 bg-transparent cursor-pointer"
+                            >
                               <img
                                 src={video.thumbnail}
                                 alt={video.title}
@@ -352,7 +355,7 @@ export default function Home() {
                                   <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
                                 </div>
                               </div>
-                            </div>
+                            </button>
                             <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-black transition-colors line-clamp-2">
                               {video.title}
                             </h3>
@@ -372,55 +375,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Preview: Próximos Shows - PRETO */}
-          <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#000000' }}>
-            <div className="container mx-auto">
-                  <div className="flex flex-col md:flex-row gap-12 items-start">
-                    <div className="flex-1">
-                      <div className="mb-8">
-                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
-                          PRÓXIMOS SHOWS
-                        </h2>
-                        <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
-                      </div>
 
-                      <div className="space-y-4">
-                        {upcomingShows.slice(0, 2).map((show) => (
-                          <div
-                            key={show.id}
-                            className="p-4 md:p-6 rounded-lg border border-[#FF2E4A]/50 hover:border-[#FF2E4A] hover:bg-black/60 transition-all duration-300 fade-in-up"
-                          >
-                            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                              <div>
-                                <p className="text-[#FF2E4A] font-bold text-sm md:text-base">
-                                  {show.day}, {new Date(show.date).toLocaleDateString('pt-BR')} às {show.time}
-                                </p>
-                                <h3 className="text-lg md:text-xl font-bold text-white mt-1">
-                                  {show.event}
-                                </h3>
-                                <p className="text-gray-300 text-sm md:text-base mt-1">
-                                  {show.location} • {show.city}
-                                </p>
-                              </div>
-                              <span className="inline-block px-3 py-1 bg-[#FF2E4A]/20 border border-[#FF2E4A] text-[#FF2E4A] text-xs md:text-sm font-bold rounded">
-                                {show.status}
-                              </span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 md:pt-16">
-                      <button
-                        onClick={() => setActiveTab('shows')}
-                        className="px-4 py-2 rounded-lg border border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-all duration-300 whitespace-nowrap"
-                      >
-                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </div>
-            </div>
-          </section>
 
           {/* CTA Final - BRANCO */}
           <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] text-center py-16" style={{ backgroundColor: '#FFFFFF' }}>
