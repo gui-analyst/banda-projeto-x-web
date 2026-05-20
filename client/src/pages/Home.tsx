@@ -244,13 +244,21 @@ export default function Home() {
           {/* Preview: Projeto X - PRETO */}
           <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#000000' }}>
             <div className="container mx-auto">
-                  <div className="flex flex-col md:flex-row gap-12 items-center">
+                  <div className="flex flex-col md:flex-row gap-12 items-start">
                     <div className="flex-1 space-y-6">
-                      <div>
-                        <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
-                          O PROJETO X
-                        </h2>
-                        <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
+                      <div className="flex items-start justify-between gap-8">
+                        <div>
+                          <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4 glow-text">
+                            O PROJETO X
+                          </h2>
+                          <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
+                        </div>
+                        <button
+                          onClick={() => setActiveTab('sobre')}
+                          className="text-white hover:text-[#FF2E4A] font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-[#FF2E4A] pb-1"
+                        >
+                          VER MAIS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all duration-300" />
+                        </button>
                       </div>
                       <div className="space-y-4">
                         <p className="text-base md:text-lg text-white leading-relaxed">
@@ -261,16 +269,10 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex-1 flex flex-col items-end gap-8">
+                    <div className="flex-1 flex flex-col items-center">
                       <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden border-2 border-[#FF2E4A]/50 hover:border-[#FF2E4A] transition-all duration-300 neon-border">
                         <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg" alt="Projeto X" className="w-full h-full object-cover" />
                       </div>
-                      <button
-                        onClick={() => setActiveTab('sobre')}
-                        className="px-6 py-3 rounded-xl border-2 border-[#FF2E4A] text-white hover:bg-[#FF2E4A] hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-3 group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95"
-                      >
-                        VER MAIS <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300" />
-                      </button>
                     </div>
                   </div>
             </div>
@@ -279,48 +281,46 @@ export default function Home() {
           {/* Preview: Diferenciais - BRANCO */}
           <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#FFFFFF' }}>
             <div className="container mx-auto">
-                  <div className="flex flex-col md:flex-row gap-12 items-start">
-                    <div className="flex-1">
-                      <div className="mb-8">
+                  <div className="flex flex-col gap-8">
+                    <div className="flex items-start justify-between gap-8">
+                      <div>
                         <h2 className="text-4xl md:text-5xl font-bold display-font text-black mb-4" style={{ textShadow: 'none' }}>
                           NOSSOS DIFERENCIAIS
                         </h2>
                         <div className="w-24 h-1 bg-[#FF2E4A] rounded" />
                       </div>
-
-                      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                        {diferenciais.slice(0, 2).map((diferencial, idx) => (
-                          <div
-                            key={idx}
-                            className="group fade-in-up overflow-hidden rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300"
-                            style={{ animationDelay: `${idx * 0.1}s` }}
-                          >
-                            <div className="relative h-40 md:h-48 overflow-hidden bg-black/60">
-                              <img
-                                src={diferencial.image}
-                                alt={diferencial.title}
-                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                              />
-                            </div>
-                            <div className="p-4 md:p-6 bg-white group-hover:bg-gray-100 transition-all duration-300">
-                              <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font mb-2">
-                                {diferencial.title}
-                              </h3>
-                              <p className="text-xs md:text-sm text-black line-clamp-2">
-                                {diferencial.description}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 md:pt-16">
                       <button
                         onClick={() => setActiveTab('diferenciais')}
-                        className="px-6 py-3 rounded-xl border-2 border-black text-black hover:bg-black hover:text-white font-bold display-font text-sm md:text-base inline-flex items-center gap-3 group transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:-translate-y-1 active:scale-95"
+                        className="text-black hover:text-[#FF2E4A] font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-[#FF2E4A] pb-1"
                       >
-                        VER TODOS <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300" />
+                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all duration-300" />
                       </button>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                      {diferenciais.slice(0, 2).map((diferencial, idx) => (
+                        <div
+                          key={idx}
+                          className="group fade-in-up overflow-hidden rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300"
+                          style={{ animationDelay: `${idx * 0.1}s` }}
+                        >
+                          <div className="relative h-40 md:h-48 overflow-hidden bg-black/60">
+                            <img
+                              src={diferencial.image}
+                              alt={diferencial.title}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="p-4 md:p-6 bg-white group-hover:bg-gray-100 transition-all duration-300">
+                            <h3 className="text-lg md:text-xl font-bold text-[#FF2E4A] display-font mb-2">
+                              {diferencial.title}
+                            </h3>
+                            <p className="text-xs md:text-sm text-black line-clamp-2">
+                              {diferencial.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
             </div>
@@ -329,51 +329,49 @@ export default function Home() {
           {/* Preview: Vídeos - VERMELHO */}
           <section className="w-screen relative left-1/2 right-1/2 -mx-[50vw] py-20 px-4 md:px-12 fade-in-up" style={{ backgroundColor: '#FF2E4A' }}>
             <div className="container mx-auto">
-                  <div className="flex flex-col md:flex-row gap-12 items-start">
-                    <div className="flex-1">
-                      <div className="mb-8">
+                  <div className="flex flex-col gap-8">
+                    <div className="flex items-start justify-between gap-8">
+                      <div>
                         <h2 className="text-4xl md:text-5xl font-bold display-font text-white mb-4" style={{ textShadow: 'none' }}>
                           MELHORES MOMENTOS
                         </h2>
                         <div className="w-24 h-1 bg-white rounded" />
                       </div>
-
-                      <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-                        {videos.slice(0, 3).map((video, idx) => (
-                          <div
-                            key={video.id}
-                            className="group cursor-pointer fade-in-up"
-                            style={{ animationDelay: `${idx * 0.1}s` }}
-                          >
-                            <button
-                              onClick={() => setSelectedVideo(video.id)}
-                              className="w-full relative overflow-hidden rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 bg-transparent cursor-pointer"
-                            >
-                              <img
-                                src={video.thumbnail}
-                                alt={video.title}
-                                className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-300"
-                              />
-                              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                                <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                  <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
-                                </div>
-                              </div>
-                            </button>
-                            <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-black transition-colors line-clamp-2">
-                              {video.title}
-                            </h3>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 md:pt-16">
                       <button
                         onClick={() => setActiveTab('videos')}
-                        className="px-6 py-3 rounded-xl border-2 border-white text-white hover:bg-white hover:text-[#FF2E4A] font-bold display-font text-sm md:text-base inline-flex items-center gap-3 group transition-all duration-300 whitespace-nowrap hover:shadow-lg hover:-translate-y-1 active:scale-95"
+                        className="text-white hover:text-black font-bold display-font text-sm md:text-base inline-flex items-center gap-2 group transition-colors duration-300 whitespace-nowrap flex-shrink-0 hover:border-b-2 hover:border-black pb-1"
                       >
-                        VER TODOS <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-all duration-300" />
+                        VER TODOS <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-all duration-300" />
                       </button>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+                      {videos.slice(0, 3).map((video, idx) => (
+                        <div
+                          key={video.id}
+                          className="group cursor-pointer fade-in-up"
+                          style={{ animationDelay: `${idx * 0.1}s` }}
+                        >
+                          <button
+                            onClick={() => setSelectedVideo(video.id)}
+                            className="w-full relative overflow-hidden rounded-lg border border-[#FF2E4A]/30 hover:border-[#FF2E4A] transition-all duration-300 bg-transparent cursor-pointer"
+                          >
+                            <img
+                              src={video.thumbnail}
+                              alt={video.title}
+                              className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                              <div className="w-12 md:w-16 h-12 md:h-16 rounded-full border-2 border-[#FF2E4A] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <Play className="w-6 md:w-8 h-6 md:h-8 text-[#FF2E4A] fill-current" />
+                              </div>
+                            </div>
+                          </button>
+                          <h3 className="text-sm md:text-base font-bold text-white mt-2 md:mt-3 group-hover:text-black transition-colors line-clamp-2">
+                            {video.title}
+                          </h3>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
