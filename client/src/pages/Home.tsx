@@ -45,7 +45,7 @@ export default function Home() {
       title: 'Violada X',
       description: 'Um momento para reviver as músicas sertanejas de raiz que fizeram sucesso, com um violeiro de alta performance tocando junto com a banda.',
       icon: 'VioladaX',
-      image: '/manus-storage/violada_95c350fb.jpeg',
+      image: '/assets/violada-x.jpeg',
     },
     {
       title: 'Dançarino X',
@@ -63,7 +63,7 @@ export default function Home() {
       title: 'Shots de Bebida',
       description: 'Interação com noivos e convidados, tomando shots de uma maneira empolgante e divertida.',
       icon: 'Shot',
-      image: '/manus-storage/shots_f8430a8d.jpeg',
+      image: '/assets/shots-de-bebida.jpeg',
     },
     {
       title: 'Óculos X',
