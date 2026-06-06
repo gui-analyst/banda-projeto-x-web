@@ -63,7 +63,7 @@ export default function Home() {
       title: 'Shots de Bebida',
       description: 'Interação com noivos e convidados, tomando shots de uma maneira empolgante e divertida.',
       icon: 'Shot',
-      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.47_8dabee25.jpeg',
+      image: '/manus-storage/shots_bf660e98.jpeg',
     },
     {
       title: 'Óculos X',
