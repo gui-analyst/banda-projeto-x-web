@@ -45,7 +45,7 @@ export default function Home() {
       title: 'Violada X',
       description: 'Um momento para reviver as músicas sertanejas de raiz que fizeram sucesso, com um violeiro de alta performance tocando junto com a banda.',
       icon: 'VioladaX',
-      image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu/WhatsApp Image 2026-03-16 at 19.51.48_cb459df8.jpeg',
+      image: '/manus-storage/violada_95c350fb.jpeg',
     },
     {
       title: 'Dançarino X',

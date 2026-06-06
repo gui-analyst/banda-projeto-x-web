@@ -8,10 +8,10 @@
   ],
   "git_remote": {
     "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663417961282/gHaHPi2GjbH7b7LmvcVLLu",
-    "access_key_id": "ASIAZV3A2ECZADDCI5LH",
-    "secret_access_key": "hSLb/JI1qoBKFjGJyaSAwAJwa3kjy4g7l4sBMqrI",
-    "session_token": "IQoJb3JpZ2luX2VjEC8aCXVzLWVhc3QtMSJHMEUCIQCBfthVRo4ZawGdkbUOYGDk3F6yz+EFNfxu/CMUrVLnVwIgGMQChx/ye6LTbwSuY4ZMB+dy7DIvIaUkbFRNH/WkisYq/wMI+P//////////ARAEGgw2NjUzODYwOTg4NjYiDONToVZeIYfMl0ve2CrTA+E1EGY3uhVrJ7D4tJ5XzkpsPfIsBqUsjdd3j6Yh9S7XFiMrPFsl/A52YnM7Yc5Js6BjnI/+gtC+0ljBkIxCdfPmV3VfRFXcA1W2Nt20ml30Jcn4MIDjnp/K1hx8m9876bwKru0vle84JLoK9jaWUZ7yizEi/9AwFCmbLrn/JtPfKeZlirgEibJUa216d174pS8g4NVSa9VOMqIMduQ9WL6W6rbWGQ6MzprQjk2KDFnKD0NquzBrSWtkwARF7DuIhmSHdmQwdepWP6eftKVtiim2v5uL23p9W+s0H63RWlvpr1fpppdwDrzAK/DabXeujB26Jun1Evg2QcaDH9OqHjg7I+B/jXBo1suMqz+b2wsO28bC6uKxsaKHZb6Onpy33T70IlQ/NU1j02FikqmqpiZi6anB+VVFRgfKfzHNXRcvxDgDvqtGSTUqREXoi04n9JzlssnqdxqTUEgsRV8V+KryCn3r5NXV+ZReydytaj519gUkNSXjJc0ZAoCrekkF0tYNrxUL6JHbb1n2cEiMM4Xxiy9M1HcowOGfwdhWWmFuW4jMu7DjwP+vZan/YbM4WrtT3LoAKFPjCPkRSX3GcxSi3ccU8+0oktMP0XoCEm2vFeGnMIX3uNAGOp0B9ttcdZsXlKEfGwSSfVu3gHM87VIc+NlGDCq4RZJ6kcgrYnyFSevS4J5blM2o/9zcPMKGTFtg9xjZEnIGJHO3z1JU473uicxLP+0DIwSxSdgBF+Fh2vqaJSy5RIC7kdGrrzD3azN7GK8P5xvcKKDnSkP2M5UXo/rvFOCN9YlofhNsCet6QvkVzzKuqzcFQVTMWKllzoe3N9uGBlR3SA==",
-    "expiration": "2026-05-21T10:53:57.000Z"
+    "access_key_id": "ASIAZV3A2ECZC7HTWCL4",
+    "secret_access_key": "tEvlM2HC/YiuYYw5Bc7sTYJQgk2+27X8cr3+e7Ky",
+    "session_token": "IQoJb3JpZ2luX2VjEML//////////wEaCXVzLWVhc3QtMSJIMEYCIQDohM03+1W8k1rTgNTr8dRKBgzL9tnrQnLSfGrHGVt87AIhAKvp7xfEqMpL7WRBWzYGJZ5FUMIGb1bDdMDJQy/4QdQGKv8DCIv//////////wEQBBoMNjY1Mzg2MDk4ODY2IgzKfeb0GbmcKWFUbx4q0wPG0WDT/RG3DVV5kKohKCkmZOKJ8bxoQDFSYZrrMRkCnMfI9+AD5Jw6tSaqjsEDM7BokEJWKAdq5WM7DEDk1ZB8MB7TWfRIwkmLw+nUs0dcZUJHuHDyEVf2ucoCXScZlTIL4p5XMwal9/llyI9wt12CCTQSfr/dhR0Y+u2tYtUvScYBFFlnLfrrwLIAN7+c9gKWUg7wLwxYW6iZy/IHM4mpMTgBV8uWkVnwoxSYY7/1FVNyA6ufxllAdkk3W8RlL9cR7I4sqLe86qJlUtDQG14h7pr+kGWgEP4hcVH5+TZFhSaWGjnE/+1RT91/nn4aXYfwrllJBrFJyIVXVgMu5/Kr/EFOTdX94vJoI4SD0O9XabnDKeef2gqzsWMfsmwL3r/PLofI4E+lI4jFVxQOl4M3s8jyhuI+1rqo6fk9VweB3v+0Khn7xP0IAoGl7bCLQ0pn8kHoLFN/twhW7Z/HeYL2quCA+ZKf4ZcaZUA4zXT6TqkfFRiSrr01wgond1AbBcSXBOL9ZlXAew8ErL0vQAxefj//EPkLV/k7kzp+6ktO6y3hY9qGid4w76YLyK2AzvIVq6DKWLZuHWbAqZaM90wY33WH21lAy59WxSehyPvBko9HajD5sZHRBjqcASOIPUUnsf1Iu2FQpDoO9Rg7j+GK9kE8aNyARCkQY0FiYNuyqh+1WdyEZ5Wno9WTe3W0Nec7mjx3H2dqkVyl38nlwcQGbk9GPC+sDvttU+cg+9iudMq49CMIZ75ygLstoPftju+0PzlyUuFExbH+ZUQoZND5x+QJ+XFUQJo4mtIkAirZyVyeI0+5qu1nkpPVNBUe2xuhnMd3yjJJ5Q==",
+    "expiration": "2026-06-07T05:29:29.000Z"
   },
   "name": "banda-projeto-x-web",
   "path": "/home/ubuntu/banda-projeto-x-web",
